@@ -1,0 +1,8 @@
+Customer 1: Create a login/home page page, sellers page 
+
+Customer 2:Create a database of all the products that sellers put on the market. 
+
+Customer 3:Build a Cart for the customers.
+
+Customer 4: Create a secure transaction system and store customers information safely. 
+
