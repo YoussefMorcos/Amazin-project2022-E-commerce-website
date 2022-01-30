@@ -1,4 +1,4 @@
-User Story 1: Create a login/home page page, sellers page 
+User Story 1: Create a login/home page page, sellers page.
 
 User Story 2: Create a database of all the products that sellers put on the market. 
 
