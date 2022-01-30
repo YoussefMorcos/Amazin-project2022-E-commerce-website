@@ -1,0 +1,30 @@
+Tasks breakdown of each member for Sprint #1
+
+  Luca:
+  
+      In charge of writting up the ReadMe File which includes:
+      
+        1) Description of the project.
+        2) Team members and overall project roles.
+        3) Project approach and technology.
+       
+  Julie:
+    
+        1) Meeting minutes file.
+        2) Sprint #1 Cover page
+      
+  Zahed:
+  
+        1) 4 user story backlogs.
+      
+  Liam:
+  
+        1) Task breakdown of each member for spirnt #1.
+      
+  Jean-Claude Abou-Elias:
+  
+        1) Plan for next sprint.
+        
+  Youssef Morcos:
+  
+        1) Joined late, task N/A for sprint #1.
