@@ -8,11 +8,12 @@ Amazin E-Commerce Application
 
     Team members and roles:
 
-        Luca Dallaire:
-        Jean-Claude Abou-Elias:
-        Liam Pereira:
-        Julie Tat:
-        Mohammed Zahed:
+        Luca Dallaire: front-end
+        Jean-Claude Abou-Elias: front-end
+        Liam Pereira: back-end
+        Julie Tat: front-end
+        Mohammed Zahed: back-end
+        Youssef Morcos: back-end
 
     Project approach and technology:
 
