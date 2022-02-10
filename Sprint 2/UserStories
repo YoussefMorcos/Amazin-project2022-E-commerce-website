@@ -1,4 +1,17 @@
 User Story 1: As a User, I want to be able to create an account so that I can safely secure my information.
+  User -> Create account
+  Define Signup/login Page form style
+  Develop HTML/Javascript page
+  Keeping track of user's session.
+  
+Criteria for user story 1
+
+  Matching username & password -> successful log in
+  Incorrect match -> error message
+  "Forgot your password" Button
+  Sign in in middle of shopping -> bring back to where it was.
+
+
 
 User Story 2: As a Seller, I want to be able to advertise my products so that my products get more exposure.
 
