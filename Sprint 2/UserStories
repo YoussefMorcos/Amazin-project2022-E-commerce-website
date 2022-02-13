@@ -15,18 +15,20 @@ Criteria for user story 1
 
 User Story 2: As a Seller, I want to be able to advertise my products so that my products get more exposure.
 
-User Story 3: As a User, I want an efficient search so I can find a find a product I can find with ease.
+User Story 3: As a User, I would like to search through the list of products with ease.
 
-User Story 4: As a user I want my credit or debit card credentials to be safe so that I can have a secure transaction.
+User Story 4: As a user, I want my credit card credentials to be safe so that I can have a secure transaction.
 
-User Story 5: As a seller, I want a webpage for my store so that I can list all my products on it.
+User Story 5: As a seller, I want a webpage for my store so that I can list avaible products for sale.
 
 User Story 6: As a developer, I want a dashboard which recommends items to the user so that they don't have to browse the website manually.
 
-User Story 7: As a developer, add a page "contact Us" so that a customer can email us about an issue with a product they had.
+User Story 7: As a developer, I want to add a page  which says "contact Us" so that a customer can email us about an issue with a product they had.
 
 User Story 8: As a Developper, I want to create a public landing page which shows up when a new user visits the website for the first time. 
 
 User Story 9: Add Google login using google API so that users dont have to create a new account and can directly sign in.
 
-User Story 10: As a developper, I want to design a database so that I can store all the different kinds of information securely. 
+User Story 10: As a developper, I want to design a databases to store user information and products for sale on the marketplace.
+
+User Story 11: As a user, I would like to add items to a "shopping cart" so that I can checkout all my items at once.
