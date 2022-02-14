@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Redressed&family=Zilla+Slab&display=swap');
+
+
+/*set a font for the html file*/
+body, form{font-family: Zilla Slab; background-color: white;}
+
+.title{text-align: center; color: black; font-family: redressed; font-size: 45pt;
+justify-content: center;padding-top:5%}
+
+.content{text-align: center; color: black;font-family: Zilla Slab; font-size: 18pt;
+padding: 1%;margin: 0%;}
+
+.button-place{text-align: center;}
+
+.message{color: black; font-family: Zilla Slab; font-size: 12pt; 
+    text-align: end;}
+
+/*set the size of img in the file*/
+img{width: 8%; height: 8%; padding: 2%;}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid 
+{
+    color: green;display: inline;
+}
+  
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid 
+{
+    color: red; display: inline;
+}
+  
