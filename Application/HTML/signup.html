@@ -88,7 +88,7 @@
   </div>
 
   <!--form for user-->
-  <form action="" class="container-md" id="registration" onsubmit="return validateRegistration()">
+  <form action="signup.php" method="post" class="container-md" id="registration" onsubmit="return validateRegistration()">
     <div class="form-group">
     <label>Username</label>
     <input type="text" name="username" class="form-control" id="username" oninput="return validateUsernameLength()">
@@ -131,13 +131,13 @@
       <legend>Shipping Address</legend>
 
       <label>First name</label>
-      <input type="text" class="form-control" name="firstname" id="firstName">
+      <input type="text" class="form-control" name="fname" id="firstName">
 
       <label>Last name</label>
-      <input type="text" class="form-control" name="lastname" id="lastName">
+      <input type="text" class="form-control" name="lname" id="lastName">
 
       <label>Street</label>
-      <input type="text" class="form-control" name="streetname" id="streetName">
+      <input type="text" class="form-control" name="street" id="streetName">
 
       <label>Apt.</label>
       <input type="text" class="form-control" name="apt" id="aptNum">
@@ -146,12 +146,12 @@
       <input type="text" class="form-control" name="postalcode" id="postalCode">
 
       <label>City</label>
-      <input type="text" class="form-control" name="cityname" id="cityname">
+      <input type="text" class="form-control" name="city" id="cityname">
       <br/>
       <br/>
 
       <label>Phone number</label>
-      <input type="tel" class="form-control" name=phonenumber placeholder="123-123-1234" id="phoneNumber">
+      <input type="tel" class="form-control" name=phone placeholder="123-123-1234" id="phoneNumber">
 
     </fieldset>
 
@@ -190,7 +190,7 @@
 
     <!--button for sign up/reset-->
     <div class="button-place">
-      <button type="submit" class="btn btn-dark btn-info" id="signUpBtn">Sign up</button> 
+      <button name = "Submit" type="submit" class="btn btn-dark btn-info" id="signUpBtn">Sign up</button>
       <button type="reset" class="btn btn-dark btn-info">Reset</button> 
     </div>
   </form>
