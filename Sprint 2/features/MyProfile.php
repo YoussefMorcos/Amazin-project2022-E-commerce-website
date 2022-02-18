@@ -19,7 +19,6 @@ $query = "Select * from customers where username = '$username'";
 $result = mysqli_query($db,$query);
 $row = $result->fetch_assoc();
 
-$id = $row['id'];
 $username = $row['username'];
 $email = $row['email'];
 $password = $row['password'];
