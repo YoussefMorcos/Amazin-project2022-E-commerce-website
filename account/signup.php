@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php 
+session_start();
+if (!isset($_POST["signUpBtn"]))
+{
+    ?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,15 +19,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+  
 </head>
     
 <body>
   <!-- menu bar-->  
   <header>
-    <!--Store name-->
     <div class="storenamespace container-lg">
-      <h1 class="brand">Amazin</h1> 
+      <h1 class="brand">Amaziiin</h1> 
     </div>
 
     <!--navigation bar  -->
@@ -57,7 +61,7 @@
               </ul>
           </li>
           <li>
-            <a class="link" href="#">Your Order</a>
+            <a class="link" href="#">Order</a>
           </li>
           <li>
            <a class="link" href="signup.html">Sign up</a>
@@ -77,20 +81,19 @@
   </header>
 
   <!--title of main content-->
-  <div class="container-md">
-    <h2 class="title">Registration</h2>
-    <p class="content">Create an account now, it is easy and free!</p>
+  <div class="container-md paddingblock">
+    <h2 class="title">Registration  
+      <p class="content">Create an account now, it is easy and free!</p>
   </div>
 
   <!--direct to log in page-->
   <div class="container-sm message padding-block">
-    <p>Already a member?
-    <a href="loginpage.html" target="_self">Sign in</a></p>
+    <p>Already have an account?
+    <a href="logIn.php" target="_self">Sign in</a></p>
   </div>
 
   <!--form for user-->
-  <form action="signup.php" method="post" class="container-md" id="registration" onsubmit="return validateRegistration()">
-
+  <form action="<?php echo ($_SERVER["PHP_SELF"])?>" method="POST" class="container-md" id="registration" name="registration" >
     <div class="form-group">
     <label>Username</label>
     <input type="text" name="username" class="form-control" id="username" oninput="return validateUsernameLength()">
@@ -133,15 +136,13 @@
       <legend>Shipping Address</legend>
 
       <label>First name</label>
-
-      <input type="text" class="form-control" name="fname" id="firstName">
+      <input type="text" class="form-control" name="firstname" id="firstName">
 
       <label>Last name</label>
-      <input type="text" class="form-control" name="lname" id="lastName">
+      <input type="text" class="form-control" name="lastname" id="lastName">
 
       <label>Street</label>
-      <input type="text" class="form-control" name="street" id="streetName">
-
+      <input type="text" class="form-control" name="streetname" id="streetName">
 
       <label>Apt.</label>
       <input type="text" class="form-control" name="apt" id="aptNum">
@@ -150,20 +151,16 @@
       <input type="text" class="form-control" name="postalcode" id="postalCode">
 
       <label>City</label>
+      <input type="text" class="form-control" name="cityname" id="cityname">
 
-      <input type="text" class="form-control" name="city" id="cityname">
-
-      <br/>
-      <br/>
+      <br/><br/>
 
       <label>Phone number</label>
-
-      <input type="tel" class="form-control" name=phone placeholder="123-123-1234" id="phoneNumber">
-
+      <input type="tel" class="form-control" name=phonenumber placeholder="123-123-1234" id="phoneNumber">
 
     </fieldset>
 
-    <br/><br/>
+    <br/><br/> 
 
     <!--NEED TO VALIDATE THIS PART IN JS-->
     <fieldset>
@@ -198,8 +195,8 @@
 
     <!--button for sign up/reset-->
     <div class="button-place">
-
-      <button name = "Submit" type="submit" class="btn btn-dark btn-info" id="signUpBtn">Sign up</button>
+      <button type="submit" name="signUpBtn" class="btn btn-dark btn-info" id="signUpBtn" 
+                onclick="return validateRegistration(); return checkCard()">Sign up</button> 
 
       <button type="reset" class="btn btn-dark btn-info">Reset</button> 
     </div>
@@ -211,12 +208,77 @@
   <footer>    
     <div class="footer">
       <p>Have questions about our products? 
-        <a href="#" style="color: rgb(205, 248, 255);">Contact us</a> </p>
+        <a href="contactUs.php" style="color: rgb(205, 248, 255);">Contact us</a> </p>
     </div>
   </footer>
-  
+
   <!--javascript at the bottom for it to load after receiving all the needed information-->
   <script type="text/javascript" src="../js/signuppage.js"></script>
-
+  
 </body>
 </html>
+<?php
+}
+// IF BUTTON IS CLICKED
+
+else
+{
+    if(!empty($_POST["username"]) && !empty($_POST["email"]) && !empty($_POST["password"]))    // input field has been filled
+    {
+        // assigning variables
+        $found = false;
+        $id = rand(100,200); // generate a random number for new user id
+
+        $userName = $_POST["username"];
+        $userEmail = $_POST["email"];
+        $password = $_POST["password"];
+        $fName = $_POST["firstname"];
+        $lName = $_POST["lastname"];
+        $street = $_POST["streetname"];
+        $apt = $_POST["apt"];
+        $postal = $_POST["postalcode"];
+        $city = "Montreal";
+        $phone =$_POST["phonenumber"];
+        $order = "none";
+        $payment = $_POST["cardnumber"];
+
+        // info to write in userlist txt file
+        $userInfo = "$id:$userName:$userEmail:$password:$fName:$lName:$street:$apt:$postal:$city:$phone:$order:$payment";
+
+        $file = fopen("userList.txt", "r");     // open userlist file to make sure no identical username and email
+
+        if($file) 
+        { 
+            while (($line = fgets($file)) !== false) // returns a line from the file
+            {
+                $array = explode(":", $line);   // ":" separate the arrays
+
+                if(trim($array[1]) === $userName )    //found same username
+                {  
+
+                    echo "<script>window.alert('Username already used, please try again.');
+                    window.history.back();</script>";
+                    exit();
+                }
+                if(trim($array[2]) === $userEmail)   // found same email
+                {
+                  echo "<script>window.alert('Email already used, please try again.');
+                    window.history.back();</script>";
+                  exit();
+                }
+            }
+        }
+         
+        if(!$found)
+        {
+          file_put_contents("userList.txt","\n$userInfo",FILE_APPEND);
+                $found = true;
+                $userName = $array[1];    // assign $userName to the first one in the line
+                fclose($file);
+                header("Location:signupSuccess.php");
+        }
+
+    }
+}
+
+?>
