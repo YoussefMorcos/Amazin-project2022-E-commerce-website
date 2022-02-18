@@ -2,7 +2,7 @@
 
 session_start();
 $username= isset($_POST['username']) ? $_POST['username'] : '';
- $_SESSION['username'] = $username;
+$_SESSION['username'] = $username;
 $db= mysqli_connect("localhost", "root","321trewq", "amazin","3306") or die ("fail");
 $query="SELECT * FROM customers where username='$username'";
 $result=mysqli_query($db,$query);
@@ -44,7 +44,7 @@ if(isset($_POST['Save'])) {
     mysqli_query($db,$EditMyProfileQuery);
 
     echo "<script>
-          window.location.href='myProfile.html';
+          window.location.href='myAccount.php';
           alert('Your profile information has been updated successfully into the system');
           </script>";
 }
