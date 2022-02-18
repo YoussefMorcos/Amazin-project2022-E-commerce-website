@@ -1,10 +1,10 @@
 <?php
 
 session_start();
-$id = isset($_POST['id']) ? $_POST['id'] : '';
-$_SESSION['id'] = $id;
-$db= mysqli_connect("localhost", "root","321trewq", "db341","3306") or die ("fail");
-$query="SELECT username FROM customers where id='$id'";
+$username= isset($_POST['username']) ? $_POST['username'] : '';
+ $_SESSION['username'] = $username;
+$db= mysqli_connect("localhost", "root","321trewq", "amazin","3306") or die ("fail");
+$query="SELECT * FROM customers where username='$username'";
 $result=mysqli_query($db,$query);
 
 
@@ -13,11 +13,11 @@ if(isset($_POST['Edit'])) {
     if ($result->num_rows==0){
         echo "<script>
             window.location.href='myProfile.html';
-            alert('This PublicHealthWorker ID does not exist in the system ');
+            alert('account does not exist in the system ');
             </script>";
     }else{
         echo "<script>
-            window.location.href='editProfile.php';
+            window.location.href='MyProfile.php';
             </script>";
 
     }
@@ -38,9 +38,9 @@ if(isset($_POST['Save'])) {
 
 
     $EditMyProfileQuery= "UPDATE customers
-                SET username='$username', email='$email', password='$password', fname= $fname , lname = $lname, 
-                    street = $street , apt = $apt , postalcode = $postalcode , city = $city , phone = $phone
-                WHERE id='$id'";
+                SET username='$username', email='$email', password='$password', fname= '$fname' , lname = '$lname', 
+                    street = '$street' , apt = '$apt' , postalcode = '$postalcode' , city = '$city' , phone = '$phone'
+                WHERE username='$username'";
     mysqli_query($db,$EditMyProfileQuery);
 
     echo "<script>

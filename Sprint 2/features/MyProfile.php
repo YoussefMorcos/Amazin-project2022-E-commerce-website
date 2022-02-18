@@ -11,11 +11,14 @@
 session_start();
 
 $username = $_SESSION['username'];
-$db= mysqli_connect("localhost", "root","321trewq", "db341","3306") or die ("fail");
-$query = "Select * from customers where username='username'";
+
+
+$db= mysqli_connect("localhost", "root","321trewq", "amazin","3306") or die ("fail");
+$query = "Select * from customers where username = '$username'";
 
 $result = mysqli_query($db,$query);
 $row = $result->fetch_assoc();
+
 $id = $row['id'];
 $username = $row['username'];
 $email = $row['email'];
@@ -32,7 +35,7 @@ $phone = $row['phone'];
 ?>
 
 
-<div id="addForm" style="width: 70%; float: right; margin-right: 3%;margin-top: 10%" >
+<div id="addForm" style="wusernameth: 70%; float: right; margin-right: 3%;margin-top: 10%" >
     <form method="post"  action="editProfile.php">
         <div class="row">
             <div class="col">
@@ -61,13 +64,19 @@ $phone = $row['phone'];
         </div>
         <div class="row">
             <div class="col">
-                <input  name="fname" type="number" class="form-control" placeholder="first name" value="<?php echo $fname;?>">
+                <input  name="fname" type="text" class="form-control" placeholder="first name" value="<?php echo $fname;?>">
             </div>
 
         </div>
         <div class="row">
             <div class="col">
-                <input  name="lname" type="number" class="form-control" placeholder="last name" value="<?php echo $lname;?>">
+                <input  name="lname" type="text" class="form-control" placeholder="last name" value="<?php echo $lname;?>">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <input  name="street" type="text" class="form-control" placeholder="street" value="<?php echo $street;?>">
             </div>
 
         </div>
