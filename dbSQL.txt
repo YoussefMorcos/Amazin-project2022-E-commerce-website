@@ -11,5 +11,5 @@ CREATE TABLE "customers" (
   "postalcode" VARCHAR(45) NULL,
   "city" VARCHAR(45) NULL,
   "phone" VARCHAR(45) NULL,
-  PRIMARY KEY ("id");
+  PRIMARY KEY ("username");
 
