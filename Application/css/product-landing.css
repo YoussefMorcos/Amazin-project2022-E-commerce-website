@@ -1,3 +1,10 @@
+body {
+  width: 100%;
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+}
+
 .container {
   padding: 0 120px;
   display: flex;
@@ -32,8 +39,8 @@
 }
 
 .landing-item_img-wrapper {
-  width: 120px;
-  height: 120px;
+  width: 220px;
+  height: 220px;
   padding: 24px;
 }
 

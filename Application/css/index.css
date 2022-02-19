@@ -1,0 +1,91 @@
+html {
+  width: 100vw;
+}
+body {
+  width: 100%;
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+}
+.mainpage-img {
+  text-align: center;
+}
+.mainpage-img img {
+  object-fit: inherit;
+  width: 100%;
+  height: 500px;
+  object-position: top;
+}
+
+.menu-wrapper {
+  width: 100%;
+}
+.shop {
+  width: 575px;
+  height: 600px;
+}
+.shop img {
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  margin-left: 25%;
+  margin-top: 8%;
+}
+.pagedivs {
+  display: flex;
+  justify-content: center;
+}
+.shoponline {
+  font-size: 32px;
+  text-align: center;
+}
+.pagedivs p {
+  width: 350px;
+  text-align: center;
+  margin-left: 20%;
+}
+@media only screen and (max-width: 800px) {
+  img {
+    object-fit: cover;
+    width: 100vw;
+    height: 25vh;
+    object-position: top;
+  }
+  .mainpage-img div {
+    position: absolute;
+    top: 15vh;
+    margin: 0 auto;
+    font-size: 20px;
+  }
+  .shop {
+    width: 100vw;
+    height: 45vh;
+  }
+  .shop img {
+    width: 175px;
+    height: 175px;
+    display: block;
+    margin: 0 auto;
+  }
+  .shoponline {
+    font-size: 24px;
+    text-align: center;
+  }
+  .pagedivs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .pagedivs p {
+    width: 60vw;
+    text-align: center;
+  }
+  @media only screen and (min-width: 750px) {
+    .mainpage-img div {
+      position: absolute;
+      top: 15vh;
+      margin: 0 auto;
+      font-size: 32px;
+    }
+  }
+}
