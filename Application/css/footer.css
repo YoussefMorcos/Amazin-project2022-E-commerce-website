@@ -3,50 +3,24 @@
   font-weight: bolder;
 }
 
-@media only screen and (min-width: 600px) {
-  .foot {
-    background-color: #dedede;
-    display: flex;
-    justify-content: center;
-    bottom: 0;
-  }
-  .foot ul {
-    list-style: none;
-    padding-right: 40px;
-  }
-  .foot li {
-    text-align: left;
-    padding-top: 10px;
-  }
-  .foot a {
-    text-decoration: none;
-    color: #242222;
-  }
-  .foot a:hover {
-    color: crimson;
-  }
+.foot {
+  background-color: #4b656f;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
 }
-@media only screen and (max-width: 600px) {
-  .foot {
-    background-color: #dedede;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    bottom: 0;
-    width: 100vw;
-  }
-  .foot ul {
-    list-style: none;
-  }
-  .foot li {
-    text-align: left;
-    padding-top: 10px;
-  }
-  .foot a {
-    text-decoration: none;
-    color: #242222;
-  }
-  .foot a:hover {
-    color: crimson;
-  }
+.foot ul {
+  list-style: none;
+  padding-right: 40px;
+}
+.foot li {
+  text-align: left;
+  padding-top: 10px;
+}
+.foot a {
+  text-decoration: none;
+  color: #ffff;
+}
+.foot a:hover {
+  color: #ffff;
 }

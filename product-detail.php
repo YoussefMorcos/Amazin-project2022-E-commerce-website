@@ -44,10 +44,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="Application/css/menuBar.css" />
+    <link rel="stylesheet" href="Application/css/menu-bar.css" />
     <link rel="stylesheet" href="Application/css/footer.css" />
     <link rel="stylesheet" href="Application/css/product-detail.css" />
-    <script src="public/scripts/pdp.js"></script>
     <title>STORE</title>
 </head>
 <body>
