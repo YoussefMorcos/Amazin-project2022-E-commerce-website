@@ -6,78 +6,30 @@ if (!isset($_POST["submitBtn"]))
 {
     ?>
     <html>
-        <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Amazin</title>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazin</title>
 
-        <link rel="stylesheet" type="text/css" href="../css/menuBar.css">
-        <link rel="stylesheet" type="text/css" href="../css/signuppage.css">
+    <link rel="stylesheet" href="../Application/css/footer.css" />
+    <link rel="stylesheet" href="../Application/css/menu-bar.css" />
+    <link rel="stylesheet" href="../Application/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../Application/css/signup.css">
 
-        <!--bootstrap coming from w3school https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp-->
+    <!--bootstrap from w3school https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-        </head>
-        <body>
-        <header>
-    <div class="storenamespace container-lg">
-      <h1 class="brand">Amaziiin</h1> 
-    </div>
-
-    <!--navigation bar  -->
-    <nav class="navbar navbar-expand-md navbar-dark"> 
-      <!--Search bar-->  
-      <div class="search-container">
-        <form action="#">
-          <input type="text" placeholder="Search..." name="search">
-          <button type="submit" class="searchbtn btn-info  btn">Search</button>
-        </form>
-      </div>
-
-      <div class=" navbar-collapse collapse" id="collapsibleNavbar">
-        <!--item of nav bar (multiple section)-->
-        <ul class="navbar-nav"> 
-          <li class="nav-item">      
-           <a class="link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="link" href="#">Sales</a>
-          </li>
-          <li class="nav-item">
-            <a class="link" href="#">>Categories</a>
-              <!--dropdown of the item using list method-->
-              <ul>                              
-                <li><a class="link" href="#" target="_self">Books</a></li>
-                <li><a class="link" href="#" target="_self" >Clothes</a></li>
-                <li><a class="link" href="#" target="_self">?</a></li>
-                <li><a class="link" href="#" target="_self">?</a></li>
-                <li><a class="link" href="#" target="_self" >?</a></li>
-                <li><a class="link" href="#" target="_self">?</a></li>
-              </ul>
-          </li>
-          <li>
-          <a class="link" href="#">Order</a>
-          </li>
-          <li>
-           <a class="link" href="signup.php">Sign up</a>
-          </li>
-          <li>
-            <a class="link" href="logIn.php">Log in</a>
-          </li>
-        </ul>
-      </div>
-     
-      <!--button for nav bar when collapsed -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
-              style="background-color: rgb(54, 54, 54); color: white;">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </nav>
-  </header>
+  
+</head>
+    
+<body>
+  <!-- menu bar-->  
+  <?php
+        include "../snippets/navbar.php";
+  ?>
 
   <div class="main-content">
     <div class="container-md">
@@ -118,15 +70,15 @@ if (!isset($_POST["submitBtn"]))
  
   </div>
 
+  <br/><br/>
+
   <!--FOOTER-->
-  <footer class="footer">    
-    <p>&copy; All Right Reserved</p>
-    <p>Have questions about our products? 
-      <a href="#" style="color:#E1E5F2">Contact us</a> </p>
-  </footer>
+  <?php
+    include "../snippets/footer.php";
+  ?>
 
   <!--JS-->
-  <script type="text/javascript" src="../js/logIn.js"></script>
+  <script type="text/javascript" src="../Application/js/logIn.js"></script>
 
     </body>
     </html>

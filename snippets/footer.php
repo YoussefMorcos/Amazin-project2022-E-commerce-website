@@ -13,8 +13,9 @@
     <ul>
         <li class="footer-head-list-item">Account</li>
         <br />
-        <li><a href="./account/logIn.php">Login</a></li>
-        <li><a href="./account/signup.php">Create Account</a></li>
+        <li><a href="../account/logIn.php">Login</a></li>
+        <li><a href="../account/signup.php">Create Account</a></li>
+
     </ul>
     <ul>
         <li class="footer-head-list-item">Contact Us</li>

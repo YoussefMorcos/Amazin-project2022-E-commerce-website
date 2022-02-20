@@ -15,8 +15,6 @@ padding: 1%;margin: 0%;}
 .message{color: black; font-family: Zilla Slab; font-size: 14pt; 
     text-align: start;}
 
-/*set the size of img in the file*/
-img{width: 8%; height: 8%; padding: 2%;}
 
 /* Add a green text color and a checkmark when the requirements are right */
 .valid 
