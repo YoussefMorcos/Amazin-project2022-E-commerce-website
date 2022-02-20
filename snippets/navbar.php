@@ -20,7 +20,7 @@
                           ?>
                         </ul>
                     </li>
-                    <li class="menu-item"><a href="./account/login-page.php">Account</a></li>
+                    <li class="menu-item"><a href="./account/logIn.php">Account</a></li>
                     <li class="menu-item"><a href="./cart.php">Cart</a></li>
                     <li class="menu-item"><a href="">Deals</a></li>
                     <?php
