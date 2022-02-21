@@ -93,7 +93,7 @@ else    // IF LOG IN BTN CLICKED
         $userEmail = $_POST["email"];
         $password = $_POST["pwd"];
 
-        $file = fopen("#", "r");     //  OPEN USER LIST
+        $file = fopen("userList.txt", "r");     //  OPEN USER LIST
 
         if($file) 
         { 
@@ -120,7 +120,7 @@ else    // IF LOG IN BTN CLICKED
                         $_SESSION['city'] = $array[9];
                         $_SESSION['phone']= $array[10];
                         $_SESSION['order'] = $array[11];
-                        header("Location:#");
+                        header("Location:../account/myAccount.php");
                     }
                     else
                     {
@@ -181,7 +181,7 @@ else    // IF LOG IN BTN CLICKED
 }
 else {   // DIRECT USER TO THEIR PROFILE PAGE
 
-    header("Location:#");
+    header("Location:myAccount.php");
     exit();
 }
 

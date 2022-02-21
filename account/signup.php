@@ -114,7 +114,7 @@ if (!isset($_POST["signUpBtn"]))
 
     <!--NEED TO VALIDATE THIS PART IN JS-->
     <fieldset>
-      <legend>Payment Method (Optional for now)</legend>
+      <legend>Payment Method</legend>
 
       <label>Card Number</label>
       <input type="text" class="form-control" name=cardnumber id="cardnumber">
@@ -146,7 +146,7 @@ if (!isset($_POST["signUpBtn"]))
     <!--button for sign up/reset-->
     <div class="button-place">
       <button type="submit" name="signUpBtn" class="btn btn-dark btn-info" id="signUpBtn" 
-                onclick="return validateRegistration(); return checkCard()">Sign up</button> 
+                onclick="return validateRegistration()">Sign up</button> 
 
       <button type="reset" class="btn btn-dark btn-info">Reset</button> 
     </div>
