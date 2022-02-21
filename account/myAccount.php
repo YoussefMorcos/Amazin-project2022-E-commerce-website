@@ -17,7 +17,7 @@ if(!isset($_POST["logout"]) && !isset($_POST["edit"]))        // if button log o
     <link rel="stylesheet" href="../Application/css/footer.css" />
     <link rel="stylesheet" href="../Application/css/menu-bar.css" />
     <link rel="stylesheet" href="../Application/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="../css/logIn.css">
+    <link rel="stylesheet" type="text/css" href="../Application/css/logIn.css">
 
     <!--bootstrap from w3school https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -40,7 +40,7 @@ if(!isset($_POST["logout"]) && !isset($_POST["edit"]))        // if button log o
       <h1>Your Profile <br/><br/></h1>
     </div>
     <div class="title left">
-      
+    (Space for picture profile)<br/><br/>
         <?php echo "".$_SESSION["username"].""?>
     </div>
     <div class="content right">
@@ -50,7 +50,7 @@ if(!isset($_POST["logout"]) && !isset($_POST["edit"]))        // if button log o
                         <b>EMAIL</b> :".$_SESSION["email"]."<br/><br/>
 
                         <b>ADDRESS</b> :<br/><br/>
-                        ".$_SESSION["firstname"]."<br/>
+                        ".$_SESSION["firstname"]."
                         ".$_SESSION["lastname"]."<br/>
                         ".$_SESSION["str"]."<br/>
                         Apt. Number : ".$_SESSION["apt"]."<br/>

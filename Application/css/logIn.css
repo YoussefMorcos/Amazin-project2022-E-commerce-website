@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Redressed&family=Zilla+Slab&display=swap');
+
+
+html, body{height: 120%}
+
+/*set a font for the body*/
+body, form{font-family: Zilla Slab;}
+
+.title{text-align: center; color: black; font-family: Kaushan Script; font-size: 30pt;
+justify-content: center;padding-top:5%;}
+
+.content{text-align: center; color: black; font-family:Zilla Slab ; font-size: 14pt;
+padding: 2%;width: 80%; float: right;}
+
+.main-content{height: 90%;}
+
+.no-style{ color: white}
+
+.left{width: 20%; float: left;}
+
+.right{width: 80%; float: right;}
+
+
+
+
+
+
+
+
