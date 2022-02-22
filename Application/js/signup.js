@@ -120,27 +120,19 @@ function validateRegistration()         // on submit
                                                 return false;
                                             }
                                             else
-                                                if(!(cardnumber.value == "") || !(cardnumber.value == null))
+                                                var newsLetter = document.getElementById("newsLetter").checked;
+                                                if(!(newsLetter))
                                                 {
-                                                    checkCard();
+                                                    alert("You must agree to the newsletter notification in order to sign up for a membership. You can withdraw your consent later.");
                                                     return false;
                                                 }
                                                 else
-                                                    var newsLetter = document.getElementById("newsLetter").checked;
-                                                    if(!(newsLetter))
+                                                    var agreement = document.getElementById("agreement").checked;
+                                                    if(!(agreement)) 
                                                     {
-                                                        alert("You must agree to the newsletter notification in order to sign up for a membership. You can withdraw your consent later.");
+                                                        alert("You must to the terms in order to sign up for a membership.");
                                                         return false;
-                                                    }
-                                                    else
-                                                        var agreement = document.getElementById("agreement").checked;
-                                                        if(!(agreement)) 
-                                                        {
-                                                            alert("You must to the terms in order to sign up for a membership.");
-                                                            return false;
-                                                        } 
-                                                        else
-
+                                                    } else
      return true;
 }
 
@@ -255,44 +247,4 @@ function checkPwd()
         return true;
 }
 
-
-// validation for payment method
-var cardnumber = document.getElementById("cardnumber");
-var expirydate = document.getElementById("expirydate");
-var securitycode = document.getElementById("securitycode");
-
-function checkCard()
-{
-
-    if (cardnumber.value.length < 16 || cardnumber.value.length > 16)
-    {
-        alert("Invalid card number.");
-        cardnumber.focus();
-        return false;
-    }
-    else
-        if(expirydate.value == "" || expirydate.value == null)
-        {
-            alert("Expiry date must be filled.");
-            expirydate.focus();
-            return false;
-        }
-        else
-            if(securitycode.value == "" || securitycode.value == null)
-            {
-                alert("Security code must be filled.");
-                securitycode.focus();
-                return false;
-            }
-            else
-                if(securitycode.value.length > 3 || securitycode.value.length <3)
-                {
-                    alert("Invalid security code.");
-                    securitycode.focus();
-                    return false;
-                }
-                else
-                    return true;
-
-}
 
