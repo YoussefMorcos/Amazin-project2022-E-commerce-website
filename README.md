@@ -13,7 +13,7 @@ Amazin is an online store that gathers items from various online stores and allo
 - Liam Pereira (40111656) Vasqq: back-end
 - Julie Tat (40170360) KurooTT: front-end
 - Mohammed Zahed (40116292) z4hed: back-end
-- Youssef Morcos (40124441) YoussefMorcos: back-end
+- Youssef Morcos (40124441) YoussefMarcos: back-end
 
 
 ## Project approach and technology:
