@@ -35,7 +35,7 @@
                                   echo "<li class='hello'></li>";
                       }
                       if(isset($_SESSION["username"])) {
-                          echo "<liv style=\"margin-right: 20px;\">Hello " . $_SESSION["username"] . "</li>";
+                          echo "<liv style=\"margin-right: 20px; color: white\">Hello " . $_SESSION["username"] . "</li>";
                       }
                     ?>
 
