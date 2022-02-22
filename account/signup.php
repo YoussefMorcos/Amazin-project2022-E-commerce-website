@@ -11,8 +11,10 @@ if (!isset($_POST["signUpBtn"]))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazin</title>
 
-    <link rel="stylesheet" type="text/css" href="../css/menuBar.css">
-    <link rel="stylesheet" type="text/css" href="../css/signuppage.css">
+    <link rel="stylesheet" href="../Application/css/footer.css" />
+    <link rel="stylesheet" href="../Application/css/menu-bar.css" />
+    <link rel="stylesheet" href="../Application/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../Application/css/signup.css">
 
     <!--bootstrap from w3school https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -24,61 +26,9 @@ if (!isset($_POST["signUpBtn"]))
     
 <body>
   <!-- menu bar-->  
-  <header>
-    <div class="storenamespace container-lg">
-      <h1 class="brand">Amaziiin</h1> 
-    </div>
-
-    <!--navigation bar  -->
-    <nav class="navbar navbar-expand-md navbar-dark"> 
-      <!--Search bar-->  
-      <div class="search-container">
-        <form action="#">
-          <input type="text" placeholder="Search..." name="search">
-          <button type="submit" class="searchbtn btn-info  btn">Search</button>
-        </form>
-      </div>
-
-      <div class=" navbar-collapse collapse" id="collapsibleNavbar">
-        <!--item of nav bar (multiple section)-->
-        <ul class="navbar-nav"> 
-          <li class="nav-item">      
-           <a class="link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="link" href="#">Sales</a>
-          </li>
-          <li class="nav-item">
-            <a class="link" href="#">>Categories</a>
-              <!--dropdown of the item using list method-->
-              <ul>                              
-                <li><a class="link" href="#" target="_self">Books</a></li>
-                <li><a class="link" href="#" target="_self" >Clothes</a></li>
-                <li><a class="link" href="#" target="_self">?</a></li>
-                <li><a class="link" href="#" target="_self">?</a></li>
-                <li><a class="link" href="#" target="_self" >?</a></li>
-                <li><a class="link" href="#" target="_self">?</a></li>
-              </ul>
-          </li>
-          <li>
-            <a class="link" href="#">Order</a>
-          </li>
-          <li>
-           <a class="link" href="signup.html">Sign up</a>
-          </li>
-          <li>
-            <a class="link" href="#">Log in</a>
-          </li>
-        </ul>
-      </div>
-     
-      <!--button for nav bar when collapsed -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
-              style="background-color: rgb(54, 54, 54); color: white;">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </nav>
-  </header>
+  <?php
+        include "../snippets/navbar.php";
+  ?>
 
   <!--title of main content-->
   <div class="container-md paddingblock">
@@ -87,7 +37,7 @@ if (!isset($_POST["signUpBtn"]))
   </div>
 
   <!--direct to log in page-->
-  <div class="container-sm message padding-block">
+  <div class="container-sm message padding-block" style="text-align: right;">
     <p>Already have an account?
     <a href="logIn.php" target="_self">Sign in</a></p>
   </div>
@@ -164,7 +114,7 @@ if (!isset($_POST["signUpBtn"]))
 
     <!--NEED TO VALIDATE THIS PART IN JS-->
     <fieldset>
-      <legend>Payment Method (Optional for now)</legend>
+      <legend>Payment Method</legend>
 
       <label>Card Number</label>
       <input type="text" class="form-control" name=cardnumber id="cardnumber">
@@ -196,7 +146,7 @@ if (!isset($_POST["signUpBtn"]))
     <!--button for sign up/reset-->
     <div class="button-place">
       <button type="submit" name="signUpBtn" class="btn btn-dark btn-info" id="signUpBtn" 
-                onclick="return validateRegistration(); return checkCard()">Sign up</button> 
+                onclick="return validateRegistration()">Sign up</button> 
 
       <button type="reset" class="btn btn-dark btn-info">Reset</button> 
     </div>
@@ -204,16 +154,13 @@ if (!isset($_POST["signUpBtn"]))
 
   <br/><br/>
 
-  <!--footer for copyrights-->
-  <footer>    
-    <div class="footer">
-      <p>Have questions about our products? 
-        <a href="contactUs.php" style="color: rgb(205, 248, 255);">Contact us</a> </p>
-    </div>
-  </footer>
+  <!--FOOTER-->
+  <?php
+    include "../snippets/footer.php";
+  ?>
 
   <!--javascript at the bottom for it to load after receiving all the needed information-->
-  <script type="text/javascript" src="../js/signuppage.js"></script>
+  <script type="text/javascript" src="../Application/js/signup.js"></script>
   
 </body>
 </html>

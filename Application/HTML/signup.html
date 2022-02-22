@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazin</title>
+
+    <link rel="stylesheet" type="text/css" href="../css/menuBar.css">
+    <link rel="stylesheet" type="text/css" href="../css/signup.css">
+
+    <!--bootstrap from w3school https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+    
+<body>
+  <!-- menu bar-->  
+  <header>
+    <!--Store name-->
+    <div class="storenamespace container-lg row">
+        <h1 class="brand pl-lg-5"> 
+          <a class="link  text-light" href="#" >Amazin</a>
+        </h1> 
+    </div>
+
+    <!--navigation bar  -->
+    <nav class="navbar navbar-expand-md navbar-dark"> 
+      
+      <div class=" navbar-collapse collapse" id="collapsibleNavbar">
+        <!--item of nav bar (multiple section)-->
+        <ul class="navbar-nav"> 
+          <li class="nav-item">      
+           <a class="link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="link" href="#">Sales</a>
+          </li>
+          <li class="nav-item">
+            <a class="link" href="#">Categories <i class="bi bi-chevron-compact-down"></i> </a>
+              <!--dropdown of the item using list method-->
+              <ul>                              
+                <li><a class="link" href="#" target="_self">Books</a></li>
+                <li><a class="link" href="#" target="_self" >Clothes</a></li>
+                <li><a class="link" href="#" target="_self">?</a></li>
+                <li><a class="link" href="#" target="_self">?</a></li>
+                <li><a class="link" href="#" target="_self" >?</a></li>
+                <li><a class="link" href="#" target="_self">?</a></li>
+              </ul>
+          </li>
+          <li>
+            <a class="link" href="#">Your Order</a>
+          </li>
+          <li>
+           <a class="link" href="signup.html">Sign up</a>
+          </li>
+          <li>
+            <a class="link" href="#">Log in</a>
+          </li>
+        </ul>
+      </div>
+
+       <!--Search bar-->
+
+      <form action="#">
+        <input type="text" placeholder="Search Shop" name="search">
+        <button type="submit" class="searchbtn btn-info btn">
+          <i class="bi bi-search"></i>
+        </button>
+      </form>
+      
+     
+      <!--button for nav bar when collapsed -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"
+              style="background-color: rgb(54, 54, 54); color: white;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </header>
+
+
+  <!--title of main content-->
+  <div class="container-md p-4 " id="registration_title">
+    <h2 class="title text-light">Registration</h2>
+    <p class="content text-light">Create an account now, it is easy and free!</p>
+  </div>
+
+
+  <!--direct to log in page-->
+  <div class="container-sm message padding-block bg-dark p-3 mb-5 text-light">
+    <p>Already a member?
+    <a href="loginpage.html" target="_self" class="text-danger">Sign in</a></p>
+  </div>
+
+  <!--form for user-->
+
+  <div class="container-md bg-dark text-light"  >
+    <h1 style="font-size: 19pt; padding-top: 1cm;">User information</h1>
+    <hr style="background-color: azure; ">
+  <form action="signup.php" method="post" class="container-md" id="registration" onsubmit="return validateRegistration()">
+
+    <div class="form-group">
+    <label class="mt-1" style="font-size: 13pt;">Username</label>
+    <input type="text" name="username" class="form-control mt-1 mb-2" id="username" style="width: 25%;" oninput="return validateUsernameLength()">
+    <div >
+      *Minimum username requirement:
+      <p id="usernameLength" class="invalid"> Minimum 5 characters</p>
+    </div>
+
+
+    <br/>
+
+    <label style="font-size: 13pt;">Email address</label>
+    <input type="email" name="email" style="width: 35%;" class="form-control" placeholder="Enter email" id="email">
+    
+    <br/>
+
+    <label style="font-size: 13pt;">Email address confirmation</label>
+    <input type="email" name="emailconfirmation" style="width: 35%;" class="form-control" placeholder="Enter email" id="confirmEmail">
+
+    <br/>
+
+      <label style="font-size: 13pt;">Password*</label>
+      <input type="password" name="password" style="width: 35%;" class="form-control" placeholder="Enter password" id="pwd" oninput="return validateRequirements()">
+      <div id="requirements">
+        *Minimum password requirements: 
+        <p id="length" class="invalid"> Minimum 8 characters</p>, at least
+        <p id="capital" class="invalid"> 1 uppercase letter</p>, and at least 
+        <p id="number" class="invalid"> 1 number</p>
+      </div>
+        
+      <br/>
+
+      <label style="font-size: 13pt;">Password confirmation</label>
+      <input type="password" style="width: 35%;" name="passconfirmation" class="form-control" placeholder="Enter password" id="confirmPwd">
+    </div>
+    
+    <br/>
+    </div>
+
+    <!--Shipping Details-->
+    <div class="container-md bg-dark text-light bord" style="margin-top: 1.5cm;">
+    <fieldset class="form-group padding-block">
+      <legend style="font-size: 19pt; padding-top: 1cm;">Shipping Address</legend>
+      <hr style="background-color: azure; ">
+      <label >First name</label>
+
+      <input type="text" class="form-control" name="fname" id="firstName" style="width: 35%;">
+
+      <label>Last name</label>
+      <input type="text" class="form-control" name="lname" id="lastName" style="width: 35%;">
+
+      <label>Street</label>
+      <input type="text" class="form-control" name="street" id="streetName" ">
+
+
+      <label>Apt.</label>
+      <input type="text" class="form-control" name="apt" id="aptNum">
+
+      <label>Postal Code</label>
+      <input type="text" class="form-control" name="postalcode" id="postalCode">
+
+      <label>City</label>
+
+      <input type="text" class="form-control" name="city" id="cityname" style="width: 25%;">
+
+      <br/>
+      <br/>
+
+      <label>Phone number</label>
+
+      <input type="tel" class="form-control" name=phone placeholder="123-123-1234" style="width: 35%;" id="phoneNumber">
+
+
+    </fieldset>
+
+    <br/><br/>
+    </div>
+
+    
+    <!--NEED TO VALIDATE THIS PART IN JS-->
+    <div class="container-md bg-dark text-light bord" style="margin-top: 1.5cm;">
+    <fieldset>
+      <legend style="font-size: 19pt; padding-top: 1cm;">Payment Method (Optional for now)</legend>
+      <hr style="background-color: azure; ">
+      <label>Card Number</label>
+      <input type="text" class="form-control" name=cardnumber id="cardnumber">
+
+      <label>Expiry Date</label>
+      <input type="text" class="form-control" name=expirydate placeholder="Month/Year" id="expirydate">
+
+      <label>Security Code</label>
+      <input type="text" class="form-control" name=securitycode placeholder="Security Code" id="securitycode">
+
+    </fieldset>
+
+    <br/><br/> 
+
+    <!--checkbox for agreement-->
+    <input type="checkbox" name="newsletter" value="newsletter" id="newsLetter">
+    <label>I would like to receive updates, offers, and newsletter via electronic
+      communications. I may withdraw my conscent at any time.
+    </label>
+   
+    <br/>
+
+    <input type="checkbox" name="agreement" value="agreement" id="agreement">
+
+    <label>I have read and agree to the Terms of Service and Privacy Policy</label>
+
+    <br/><br/>
+  </div>
+
+    <!--button for sign up/reset-->
+    <div class="button-place" style="margin-top: 1.5cm;">
+
+      <button name = "Submit" type="submit" class="btn btn-dark btn-info" id="signUpBtn">Sign up</button>
+
+      <button type="reset" class="btn btn-dark btn-info">Reset</button> 
+    </div>
+  </form>
+
+  <br/><br/>
+
+  <!--footer for copyrights-->
+  <footer>    
+    <div class="footer">
+      <p>Have questions about our products? 
+        <a href="#" style="color: rgb(205, 248, 255);">Contact us</a> </p>
+    </div>
+  </footer>
+  
+  <!--javascript at the bottom for it to load after receiving all the needed information-->
+  <script type="text/javascript" src="../js/signuppage.js"></script>
+
+</body>
+</html>

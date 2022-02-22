@@ -2,7 +2,7 @@
 
 
 /*set a font for the html file*/
-body, form{font-family: Zilla Slab; background-color: white;}
+body{font-family: Zilla Slab; background-color: white;}
 
 .title{text-align: center; color: black; font-family: redressed; font-size: 45pt;
 justify-content: center;padding-top:5%}
@@ -12,11 +12,9 @@ padding: 1%;margin: 0%;}
 
 .button-place{text-align: center;}
 
-.message{color: black; font-family: Zilla Slab; font-size: 12pt; 
-    text-align: end;}
+.message{color: black; font-family: Zilla Slab; font-size: 14pt; 
+    text-align: start;}
 
-/*set the size of img in the file*/
-img{width: 8%; height: 8%; padding: 2%;}
 
 /* Add a green text color and a checkmark when the requirements are right */
 .valid 
@@ -29,4 +27,12 @@ img{width: 8%; height: 8%; padding: 2%;}
 {
     color: red; display: inline;
 }
-  
+
+.main-content {height: 80%;}
+
+#registration_title{ 
+    background-position: center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-image: url(https://media0.giphy.com/media/dAWZiSMbMvObDWP3aA/giphy.gif?cid=6c09b9528a8475b4b61e2f256d2fb7ef7b4301ea4a7881d7&rid=giphy.gif&ct=g);
+}

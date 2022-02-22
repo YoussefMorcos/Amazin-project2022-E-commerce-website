@@ -1,55 +1,125 @@
 /*importing font from google API*/
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Redressed&family=Zilla+Slab&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Redressed&family=Zilla+Slab&display=swap");
 
 /*setting the body and the whole html file with automatic adjustment (width and height)*/
-body, html {width: auto; height: auto; margin: 0; padding: 0%;}
+body,
+html {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0%;
+}
 
 /*body style*/
-body{background-color: #E1E5F2;overflow-y:scroll;}
+body {
+  background-color: #ffffff;
+  overflow-y: scroll;
+}
 
-header{background-color: #022B3A; width: 100%;}
+header {
+  background-color: #022b3a;
+  width: 100%;
+}
 
 /*store name space*/
-.storenamespace {margin-top: 0%;margin-bottom: 0%;background-color:#022B3A;
-padding: 2rem 5rem; position: relative;}
+.storenamespace {
+  margin-top: 0%;
+  margin-bottom: 0%;
+  background-color: #022b3a;
+  padding: 2rem 5rem;
+  position: relative;
+}
 
 /*store name font-style*/
-.brand{font-size: 45pt;text-align: center;font-family:Kaushan Script;
-    color: white;}
+.brand {
+  font-size: 45pt;
+  text-align: center;
+  font-family: Kaushan Script;
+  color: white;
+}
 
 /*style when cursor hover on the dropdown links*/
-.link:hover {text-decoration: none;color: black;}
+.link:hover {
+  text-decoration: none;
+  color: black;
+}
 
-.searchbtn {color: white; background-color: #bdbfc0;}
+.searchbtn {
+  color: white;
+  background-color: #bdbfc0;
+}
 
-.footer{ width: 100%;left: 0%;bottom: 0%;position:relative;display: inline-block;
-    border: thin;padding: 2%;background-color:#022B3A;color: white; }
-  
-
+.footer {
+  width: 100%;
+  left: 0%;
+  bottom: 0%;
+  position: relative;
+  display: inline-block;
+  border: thin;
+  padding: 2%;
+  background-color: #022b3a;
+  color: white;
+}
 
 /*the following code is taken from https://codepen.io/una/pen/Gxwogy and has been modified*/
 
-ul{ width: 100%; margin: 0;display: flex;padding-left: 0; background-color:#022B3A; 
-list-style: none;justify-content: center; font-family: Zilla Slab; 
-font-size: 14pt;}
-  
-li { float: left;position: relative;display: block;padding: 1rem 1.5rem;
-background-color:#022B3A;text-decoration: none; 
-transition-duration: 0.5s;}
+ul {
+  width: 100%;
+  margin: 0;
+  display: flex;
+  padding-left: 0;
+  background-color: #022b3a;
+  list-style: none;
+  justify-content: center;
+  font-family: Zilla Slab;
+  font-size: 14pt;
+}
+
+li {
+  float: left;
+  position: relative;
+  display: block;
+  padding: 1rem 1.5rem;
+  background-color: #022b3a;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
 
 /* color of the word in the list*/
-li a { color: white;}
-      
+li a {
+  color: white;
+}
+
 /* style for the item when pointer on it*/
-li:hover { background-color: #E1E5F2; cursor: pointer; color: black;}
+li:hover {
+  background-color: #e1e5f2;
+  cursor: pointer;
+  color: black;
+}
 
 /* style for the dropdown*/
-ul li ul { margin-top: 1.2rem;position: absolute; min-width: 15rem; left: 0; display: none;
-z-index: 10;background: #022B3A; visibility: hidden; opacity: 0;
-transition: all 0.5s ease;}
-  
+ul li ul {
+  margin-top: 1.2rem;
+  position: absolute;
+  min-width: 15rem;
+  left: 0;
+  display: none;
+  z-index: 10;
+  background: #022b3a;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
 ul li:hover > ul,
-ul li ul:hover {visibility: visible;opacity: 1;display: block;}
-    
-ul li ul li { clear: both; width: 100%;} 
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul li ul li {
+  clear: both;
+  width: 100%;
+}
 /* end of the taken code */
