@@ -1,10 +1,11 @@
 User Story 1: As a User, I want to be able to create an account so that I can safely secure my information. 13 pts.
+  
   User -> Create account
   Define Signup/login Page form style
   Develop HTML/Javascript page
   Keeping track of user's session.
   
-Criteria for user story 1
+Criteria for user story 1:
 
   Matching username & password -> successful log in
   Incorrect match -> error message
@@ -20,12 +21,46 @@ User Story 3: As a User, I would like to search through the list of products wit
 User Story 4: As a user, I want my credit card credentials to be safe so that I can have a secure transaction. 3 pts 
 
 User Story 5: As a user, I would to initate the "return process" if i'm unhappy with my purchase. 13 pts
+      
+      Seller -> Post items
+      Define page form style
+      Develop HTML/Javascript page to add image
+      keep track of user's session
+      
+Criteria for user story 5:
+      
+      Adding image/description/price will save in database
+      Able to add image
 
 User Story 6: As a developer, I want a dashboard which recommends items to the user so that they don't have to browse the website manually. 13 pts
 
 User Story 7: As a developer, I want to add a page  which says "contact Us" so that a customer can email the customer service team about an issue with a product they had. 3 pts.
+      
+      Developer -> Contact Us(seller)
+      Define page form style
+      Identify the specific seller and product id + buyer's info
+      Develop Javascript to send e-mail
+      
+Criteria for user story 7:
+
+      Have a valid id number for product
+      Ensure that the e-mail is sent
+      Make sure product is from the said seller
+      Validation of email
+      
 
 User Story 8: As a Developper, I want to create a public landing page which shows up when a new user visits the website for the first time. 8 pts
+      
+      Developer->landing page
+      Define page style
+      Keep track of users session
+      Link to other pages
+      
+Criteria for user story 8:
+
+      Have banner with brand
+      Carousel promoting products
+      Tabs directing to specific page(login/sale/cart)
 
 User Story 9: Add Google login using google API so that users dont have to create a new account and can directly sign in. 13 pts
 
