@@ -10,7 +10,8 @@
 </head>
 <body>
   <?php
-    include "./snippets/navbar.php";
+
+    include "navbar.php";
   ?>
     <div class="mainpage-img">
       <img src="assets/mainpageimage.jpg">
@@ -45,7 +46,7 @@
 </br>
 
  <?php
-    include "./snippets/footer.php";
+    include "footer.php";
   ?>
 
 </body>

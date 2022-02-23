@@ -1,5 +1,10 @@
 <?php
 session_start();
+session_destroy();
+unset($_SESSION['username']);
+
+
+
 if(!isset($_POST["logIn"]))        // if button log in is not clicked
 {
     ?>
@@ -10,15 +15,14 @@ if(!isset($_POST["logIn"]))        // if button log in is not clicked
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazin</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../Application/css/footer.css" />
     <link rel="stylesheet" href="../Application/css/menu-bar.css" />
     <link rel="stylesheet" href="../Application/css/index.css" />
     <link rel="stylesheet" type="text/css" href="../Application/css/signup.css">
 
     <!--bootstrap from w3school https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp-->
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -28,7 +32,7 @@ if(!isset($_POST["logIn"]))        // if button log in is not clicked
 <body>
   <!-- menu bar-->  
   <?php
-        include "../snippets/navbar.php";
+        include "../navbar.php";
   ?>
 
 <div class="main-content">
@@ -59,7 +63,7 @@ if(!isset($_POST["logIn"]))        // if button log in is not clicked
 
   <!--FOOTER-->
   <?php
-    include "../snippets/footer.php";
+    include "../footer.php";
   ?>
 
 </body>

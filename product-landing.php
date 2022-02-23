@@ -28,7 +28,7 @@
 
   ?>
   <?php
-    include "./snippets/navbar.php";
+    include "navbar.php";
   ?>
   <div class="container">
       <div class="header">
@@ -82,7 +82,7 @@
   </div>
 
   <?php
-    include "./snippets/footer.php";
+    include "footer.php";
    ?>
  </body>
 </html>

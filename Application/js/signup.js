@@ -23,16 +23,16 @@ function validateRegistration()         // on submit
                 email.focus();
                 return false;
             } 
-            else 
-                // email pattern
-                var pattern = /^\b.[A-Z0-9\._-]*@(?:[A-Z0-9].\B)+(?:.[A-Z]{2,3})+$/i;
-
-                // validate email pattern
-                if (!(pattern.test(email.value)))
-                {
-                    alert("It is an invalid email address. Please try again.");
-                    return false;
-                }
+            // else
+            //     // email pattern
+            //     var pattern = /^\b.[A-Z0-9\._-]*@(?:[A-Z0-9].\B)+(?:.[A-Z]{2,3})+$/i;
+            //
+            //     // validate email pattern
+            //     if (!(pattern.test(email.value)))
+            //     {
+            //         alert("It is an invalid email address. Please try again.");
+            //         return false;
+            //     }
                 else
                     // validate email and email confirmation
                     if (email.value != confirmEmail.value)
@@ -120,7 +120,7 @@ function validateRegistration()         // on submit
                                                 return false;
                                             }
                                             else
-                                                if(!(cardnumber.value == "") || !(cardnumber.value == null))
+                                                if(!(cardnumber.value =="") || !(cardnumber.value == null))
                                                 {
                                                     checkCard();
                                                     return false;
