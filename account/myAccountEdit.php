@@ -30,9 +30,11 @@ session_start();
         include "../navbar.php";
   $db= mysqli_connect("localhost", "root","321trewq", "amazin","3306") or die ("fail");
   $username = $_SESSION['username'];
+
   $query="SELECT * FROM customers where username='$username'";
   $result=mysqli_query($db,$query);
   $row = $result->fetch_assoc();
+  $_SESSION['email'] = $row['email'];
   ?>
 
     <!--content space-->
@@ -57,7 +59,7 @@ session_start();
 
                             <br/>
 
-                            Email address: <p style="display: inline;" id="email"><?php echo "".$row['email'].""?></p>
+                            Email address: <p style="display: inline;" id="email" name = "email"><?php echo "".$row['email'].""?></p>
                             <p style="display: none;" id="newEmailDisplay"></p>
                             <br/>
                             <br/>

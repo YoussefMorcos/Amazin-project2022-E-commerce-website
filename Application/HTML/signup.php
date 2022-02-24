@@ -1,14 +1,17 @@
 <?php
 session_start();
 $username = isset($_POST['username']) ? $_POST['username'] : '';
+$email = isset($_POST['email']) ? $_POST['email'] : '';
 $_SESSION['username'] = $username;
 $db= mysqli_connect("localhost", "root","321trewq", "amazin","3306") or die ("fail");
 $query="SELECT username FROM customers where username='$username'";
+$query2 = "SELECT email FROM customers where email='$email'";
 $result=mysqli_query($db,$query);
+$result2=mysqli_query($db,$query2);
 
 if(isset($_POST['Add'])) {
 
-    if ($result->num_rows!=0){
+    if ($result->num_rows!=0 or $result2->num_rows!=0){
         echo "<script>
             alert('This username already exists in the system ');
             window.location.href='signup.html';
