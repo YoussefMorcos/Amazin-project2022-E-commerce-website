@@ -1,6 +1,6 @@
 <?php         
 session_start();
-        if (!isset($_POST["confirmBtn"]))   // CONFIRM BTN NOT CLICKED
+        if (!isset($_POST["edit"]))   // CONFIRM BTN NOT CLICKED
         {
      ?>
      
