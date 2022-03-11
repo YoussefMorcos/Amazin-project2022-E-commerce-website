@@ -3,34 +3,44 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="Application/css/menu-bar.css" />
-    <link rel="stylesheet" href="Application/css/footer.css" />
-    <link rel="stylesheet" href="Application/css/product-landing.css" />
+    <link rel="stylesheet" href="../Application/css/menu-bar.css" />
+    <link rel="stylesheet" href="../Application/css/footer.css" />
+    <link rel="stylesheet" href="../Application/css/product-landing.css" />
     <title>STORE</title>
 </head>
 <body>
   <?php
-      $aisle = $_GET['aisle'];
+  $aisle = isset($_GET['aisle']) ? $_GET['aisle'] : 'general';
 
       $cleanAisle = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
 
 
-      $productsSource = fopen("files/products.csv", "r");
+      $productsSource = fopen("../files/products.csv", "r");
+  $productsSource2 = fopen("../files/products.csv", "r");
 
       $products = array();
 
 
-      while ($row = fgetcsv($productsSource)) {
+      while ($row = fgetcsv($productsSource2)) {
         if ($row[4] == $aisle) {
           array_push($products, $row);
         }
      }
+     if($aisle == 'general') {
+         while ($row2 = fgetcsv($productsSource)) {
+             if ($row2[1] != $aisle) {
+                 array_push($products, $row2);
+             }
+         }
+     }
+
 
      fclose($productsSource);
+  fclose($productsSource2);
 
   ?>
   <?php
-    include "navbar.php";
+    include "../navbar.php";
   ?>
   <div class="container">
       <div class="header">
@@ -47,7 +57,7 @@
              $asset = strtolower(str_replace(" ", "_", $name));
 
 
-             $imgPath = "assets/" . $aisle . "/" . $asset . ".jpg";
+             $imgPath = "../assets/" . $aisle . "/" . $asset . ".jpg";
              $linkPath = "product-detail.php?code=" . $code;
              $img = "<img class=\"landing-item_img\"  src=\"" . $imgPath . "\"alt=\"" . $asset . "\" />";
 
@@ -84,7 +94,7 @@
   </div>
 
   <?php
-    include "footer.php";
+    include "../footer.php";
    ?>
  </body>
 </html>

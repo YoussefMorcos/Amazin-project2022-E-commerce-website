@@ -17,13 +17,21 @@ if(!isset($_SESSION))
             </div>
             <div class="menu-wrapper">
                 <ul class="menu">
-                    <li class="menu-item"><a href="product-landing.php"> Shop</a>
+                   <?php if(str_contains($_SERVER['REQUEST_URI'],"/products/")){
+
+                      echo' <li class="menu-item"><a href="product-landing.php"> Shop</a>';
+                   }else echo ' <li class="menu-item"><a href="products/product-landing.php"> Shop</a>'
+
+                   ?>
+
                         <ul class="submenu">
                           <?php
                             $aisles = ["jewelry", "tools", "electronics", "clothes"];
                             foreach ($aisles as $aisle) {
-                                  $displayName = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
-                                  echo '<li class="menu-item submenu-item"><a href="product-landing.php?aisle=' . $aisle . '">' . $displayName . '</a></li>';
+                                $displayName = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
+                                if (str_contains($_SERVER['REQUEST_URI'], "/products/")) {
+                                    echo '<li class="menu-item submenu-item"><a href="product-landing.php?aisle=' . $aisle . '">' . $displayName . '</a></li>';
+                                }else echo '<li class="menu-item submenu-item"><a href="products/product-landing.php?aisle=' . $aisle . '">' . $displayName . '</a></li>';
                             }
                           ?>
                         </ul>
@@ -62,7 +70,10 @@ if(!isset($_SESSION))
 
                       }else echo "<a href='account/logIn.php'  style=\"margin-right: 20px;\"> Login </a>";
                     ?>
-                    <li><form method="post" action="Search-Result.php">
+                    <li><?php if (str_contains($_SERVER['REQUEST_URI'], "/products/")) {
+                                    echo '<form method="post" action="Search-Result.php">';
+                                }else echo '<form method="post" action="products/Search-Result.php">';?>
+                        <form method="post" action="products/Search-Result.php">
                             <input style="height: 30px;width: 300px;margin-left: 100px" type="text" name="search" placeholder="Search for a product">
 
                         </form>

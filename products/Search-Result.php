@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="Application/css/footer.css" />
-    <link rel="stylesheet" href="Application/css/menu-bar.css" />
-    <link rel="stylesheet" href="Application/css/product-landing.css" />
+    <link rel="stylesheet" href="../Application/css/footer.css" />
+    <link rel="stylesheet" href="../Application/css/menu-bar.css" />
+    <link rel="stylesheet" href="../Application/css/product-landing.css" />
     <title>search</title>
 </head>
 <body>
@@ -17,14 +17,14 @@ $query="SELECT products.id, name, price, username , description,imgPath, sellerI
 OR category LIKE '%$search%') AND products.sellerID = customers.id" ;
 $result=mysqli_query($db,$query);
 
-include "navbar.php";
+include "../navbar.php";
 ?>
 <h1>Search Results</h1>
 <h6><?php echo mysqli_num_rows($result) ;?> result(s) </h6>
 
 <?php
 while($row = mysqli_fetch_assoc($result)) {
-    $img = "<img class=\"landing-item_img\"  src=\"" . $row['imgPath'] . "\"alt=\"" .  "\" />";
+    $img = "<img class=\"landing-item_img\"  src=\"../" . $row['imgPath'] . "\"alt=\"" .  "\" />";
 
 $item =  "<a class=\"landing-item__link\" href=\"" . "\">
 <div class=\"landing-item\">
@@ -64,7 +64,7 @@ $item =  "<a class=\"landing-item__link\" href=\"" . "\">
 </a>";
 echo $item;
 }
-include ('footer.php');
+include('../footer.php');
 
 ?>
 </body>
