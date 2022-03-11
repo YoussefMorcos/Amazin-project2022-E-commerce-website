@@ -74,7 +74,9 @@ if(!isset($_SESSION))
                                     echo '<form method="post" action="Search-Result.php">';
                                 }else echo '<form method="post" action="products/Search-Result.php">';?>
                         <form method="post" action="products/Search-Result.php">
-                            <input style="height: 30px;width: 300px;margin-left: 100px" type="text" name="search" placeholder="Search for a product">
+                            <?php $search = isset($_POST['search']) ? $_POST['search'] : ''; ?>
+
+                            <input style="height: 30px;width: 300px;margin-left: 100px" type="text" name="search" placeholder="Search for a product" value=<?php echo $search;?>>
 
                         </form>
 
