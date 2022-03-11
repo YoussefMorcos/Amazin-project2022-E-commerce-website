@@ -170,3 +170,15 @@ User story 13: As a user, I want to be able to login to an account I've already 
       Invalid match -> Display alert/error message (invalid email or pwd)
       On successful login -> direct user to index (home page)
       Unsuccessful login -> direct user to user not found page (ask user to sign-up/try again)
+      
+ User Story 14: As a User, I want to view all available products by clicking on a “products” button. 
+  
+    User->Products page 
+    Develop the products page using PHP.  
+    Insert individual products using CSV (temporary) to display on products page. 
+    In sprint 3, We will use SQL to insert/update products. 
+    
+    Criteria:
+      Upon click of “Products” button -> Brings user to products page 
+      On successful click -> brings user to products page 
+      On unsuccessful click -> no products are shown on the products page OR unable to take user to products page on click of the “Products” button. 
