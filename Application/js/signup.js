@@ -104,27 +104,27 @@ function validateRegistration()         // on submit
                                         postalCode.focus();
                                         return false;
                                     }
-                                    else
-                                        if(phoneNumber.value == "" || phoneNumber.value==null)
-                                        {
-                                            alert("Please provide a phone number. Format : 123-123-1234");
-                                            phoneNumber.focus();
-                                            return false;
-                                        }
-                                        else
-                                            var phonePattern = /^\d{3}-\d{3}-\d{4}$/;
-                                            if (!(phonePattern.test(phoneNumber.value)))
-                                            {
-                                                alert("Please provide a valid phone number in this following format : 123-123-1234");
-                                                phoneNumber.focus();
-                                                return false;
-                                            }
-                                            else
-                                                if(!(cardnumber.value =="") || !(cardnumber.value == null))
-                                                {
-                                                    checkCard();
-                                                    return false;
-                                                }
+                                    // else
+                                    //     if(phoneNumber.value == "" || phoneNumber.value==null)
+                                    //     {
+                                    //         alert("Please provide a phone number. Format : 123-123-1234");
+                                    //         phoneNumber.focus();
+                                    //         return false;
+                                    //     }
+                                        // else
+                                        //     var phonePattern = /^\d{3}-\d{3}-\d{4}$/;
+                                        //     if (!(phonePattern.test(phoneNumber.value)))
+                                        //     {
+                                        //         alert("Please provide a valid phone number in this following format : 123-123-1234");
+                                        //         phoneNumber.focus();
+                                        //         return false;
+                                        //     }
+                                        //     else
+                                        //         if(!(cardnumber.value =="") || !(cardnumber.value == null))
+                                        //         {
+                                        //             checkCard();
+                                        //             return false;
+                                        //         }
                                                 else
                                                     var newsLetter = document.getElementById("newsLetter").checked;
                                                     if(!(newsLetter))

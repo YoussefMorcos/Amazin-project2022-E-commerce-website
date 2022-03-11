@@ -65,7 +65,7 @@ if (!isset($_POST["submitBtn"]))
     <div class="container-sm content">
       Do not have an account yet? Sign up now! <br/>
       <!--DIRECT TO SIGNUP.PHP-->
-      <a href="signup.php" style="color: rgb(108, 155, 172)" target="_self">Create an account</a>
+      <a href="../Sprint%201/signup.php" style="color: rgb(108, 155, 172)" target="_self">Create an account</a>
     </div>
  
   </div>

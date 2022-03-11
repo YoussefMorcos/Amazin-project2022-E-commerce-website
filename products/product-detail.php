@@ -1,10 +1,11 @@
 <!DOCTYPE html>
   <?php
 
-      $data = file_get_contents("files/products.csv");
+
+      $data = file_get_contents("../files/products.csv");
 
       $productId = $_GET["code"];
-      $products = fopen("files/products.csv", "r");
+      $products = fopen("../files/products.csv", "r");
 
 
 
@@ -26,12 +27,12 @@
 
 
      $imgPath = "assets/" . $aisle . "/" . $asset . ".jpg";
-    $img = "<img class=\"detail-item_img\"  src=\"" . $imgPath . "\"alt=\"" . $asset . "\" />";
+    $img = "<img class=\"detail-item_img\"  src=\"../" . $imgPath . "\"alt=\"" . $asset . "\" />";
 
      fclose($products);
 
     if(isset($_POST["submit"])) {
-        $cartSource = fopen("files/cart.csv", "a") or die("WTF");
+        $cartSource = fopen("../files/cart.csv", "a") or die("WTF");
         $quantity = $_POST["quantity"];
         $code = $_POST["code"];
         $text = $code . "," . $quantity . "\n";
@@ -48,12 +49,18 @@
     <link rel="stylesheet" href="../Application/css/footer.css" />
     <link rel="stylesheet" href="../Application/css/product-detail.css" />
     <title>STORE</title>
+    <style>
+    img {
+        height: 100px;
+    }
+
+    </style>
 </head>
 <body>
   <?php
-    include "snippets/navbar.php";
+    include "../navbar.php";
   ?>
-  <div class="container">
+  <div class="">
       <div class="content">
           <div class="detail-item">
               <div class="detail-item_img-wrapper">
@@ -106,7 +113,7 @@ $moreDescription = "";
   </div>
 
   <?php
-    include "snippets/footer.php";
+    include "../footer.php";
    ?>
 </body>
 </html>

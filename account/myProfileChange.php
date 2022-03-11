@@ -9,9 +9,7 @@ $query="SELECT username FROM customers where username='$newName'";
 $query2 = "SELECT email FROM customers where email='$newEmail'";
 $result=mysqli_query($db,$query);
 $result2=mysqli_query($db,$query2);
-echo "<script>
-            alert('$username . $email . $newEmail . $newName . $result->num_rows ');
-            </script>";
+
 
 if(isset($_POST['confirmBtn'])) {
 
