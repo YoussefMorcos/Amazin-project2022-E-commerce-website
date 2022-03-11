@@ -30,8 +30,8 @@ if(!isset($_SESSION))
                             foreach ($aisles as $aisle) {
                                 $displayName = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
                                 if (str_contains($_SERVER['REQUEST_URI'], "/products/")) {
-                                    echo '<li class="menu-item submenu-item"><a href="product-landing.php?aisle=' . $aisle . '">' . $displayName . '</a></li>';
-                                }else echo '<li class="menu-item submenu-item"><a href="products/product-landing.php?aisle=' . $aisle . '">' . $displayName . '</a></li>';
+                                    echo '<li class="submenu-item"><a href="product-landing.php?aisle=' . $aisle . '">' . $displayName . '</a></li>';
+                                }else echo '<li class="submenu-item"><a href="products/product-landing.php?aisle=' . $aisle . '">' . $displayName . '</a></li>';
                             }
                           ?>
                         </ul>
