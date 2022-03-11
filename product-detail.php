@@ -6,7 +6,7 @@
       $productId = $_GET["code"];
       $products = fopen("files/products.csv", "r");
 
-      $product;
+
 
       while ($row = fgetcsv($products)) {
         if ($row[0] == $productId) {
@@ -80,7 +80,7 @@
                   <p class="item--desc">
                       <?php
                          echo $description;
-
+$moreDescription = "";
                          if ($moreDescription != "") {
                             echo "<br /><br />
                                 <a href=\"more-info.php?code=$code\">

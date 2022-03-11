@@ -10,16 +10,18 @@
 </head>
 <body>
   <?php
-      $aisle = $_GET["aisle"];
+      $aisle = $_GET['aisle'];
 
       $cleanAisle = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
+
 
       $productsSource = fopen("files/products.csv", "r");
 
       $products = array();
 
+
       while ($row = fgetcsv($productsSource)) {
-        if ($row[6] == $aisle) {
+        if ($row[4] == $aisle) {
           array_push($products, $row);
         }
      }
