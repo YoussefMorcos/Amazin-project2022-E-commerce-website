@@ -1,3 +1,7 @@
+Story point allocation explanation: A variation of planning poker was used where each member would provide a number on the count of 3 into a chat.
+                                    All members would send their numbers at the same time and the people with the lowest and highest numbers would justify their choices.
+             
+
 User Story 1: As a User, I want to be able to create an account so that I can safely secure my information. --> 13 pts.
   
   User -> Create account
