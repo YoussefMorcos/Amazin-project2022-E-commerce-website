@@ -40,8 +40,10 @@ if(!isset($_SESSION))
                     if(!str_contains($_SERVER['REQUEST_URI'],"/account/")){
                     echo "<li class='menu-item'><a href='account/myAccount.php'>Account</a></li>";
                     }else{ echo "<li class='menu-item'><a href='myAccount.php'>Account</a></li>";}?>
+                    <?php if(isset($_SESSION['username'])){
+                        echo " <li class='menu-item'><a href='account/cart.php'>Cart</a></li>";
+                    }?>
 
-                    <li class="menu-item"><a href="./cart.php">Cart</a></li>
                     <li class="menu-item"><a href="">Deals</a></li>
                     <?php
                       if(isset($_SESSION["admin"])) {
