@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+body {
+  background-color: lightgray;
+}
+</style>
+
+<h1>Post item for sale</h1>
+
+<label for="proddesc">Product Description:</label><br>
+<textarea id="proddesc" name="proddesc" rows="8" cols="30"></textarea><br><br>
+<label for="price">Price:</label>
+<input type="text" name="price" ><br><br>
+
+
+<label for="output">Add Image:</label>
+<input type="file" accept="image/*" onchange="loadFile(event)">
+<img id="output" width="250" 
+     height="200"/><br><br>
+<input type="button" id="bt" value="Sell Item"><br><br>	 
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
+
+</body>
+</html>
