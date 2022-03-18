@@ -12,6 +12,7 @@
 <?php
 session_start();
 $search = isset($_POST['search']) ? $_POST['search'] : '';
+$search = ucfirst($search);
 $db= mysqli_connect("localhost", "root","321trewq", "amazin","3306") or die ("fail");
 $query="SELECT products.id, name, price, username , description,imgPath, sellerID  FROM products,customers where (description LIKE '%$search%' OR name LIKE '%$search%'
 OR category LIKE '%$search%') AND products.sellerID = customers.id" ;
@@ -26,7 +27,7 @@ include "../navbar.php";
 while($row = mysqli_fetch_assoc($result)) {
     $img = "<img class=\"landing-item_img\"  src=\"../" . $row['imgPath'] . "\"alt=\"" .  "\" />";
 
-$item =  "<a class=\"landing-item__link\" href=\"" . "\">
+    $item =  "<a class=\"landing-item__link\" href=\"" . "\">
 <div class=\"landing-item\">
     <div class=\"landing-item_img-wrapper\">
         " . $img . "
@@ -62,7 +63,7 @@ $item =  "<a class=\"landing-item__link\" href=\"" . "\">
     </div>
 </div>
 </a>";
-echo $item;
+    echo $item;
 }
 include('../footer.php');
 

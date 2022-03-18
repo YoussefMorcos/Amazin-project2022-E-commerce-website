@@ -1,46 +1,35 @@
 <!DOCTYPE html>
-  <?php
+<?php
+session_start();
+$productId = $_GET["code"];
+$db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
+$aisle = isset($_GET['aisle']) ? $_GET['aisle'] : 'general';
+$cleanAisle = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
+$query = "SELECT * FROM products where id='$productId'";
+$result = mysqli_query($db, $query);
+$row = $result->fetch_assoc();
+$code = $row['id'];
+$_SESSION['code'] = $code;
+$name = $row['name'];
+$price = $row['price'];
+$description = $row['description'];
+$aisle = $row['category'];
+$asset = strtolower(str_replace(" ", "_", $name));
+$imgPath = "../" . $row['imgPath'] . "/";
+$img = "<img class=\"detail-item_img\"  src=\"../" . $imgPath . "\"alt=\"" . $asset . "\" />";
 
 
-      $data = file_get_contents("../files/products.csv");
 
-      $productId = $_GET["code"];
-      $products = fopen("../files/products.csv", "r");
+if(isset($_POST["submit"])) {
+    $cartSource = fopen("../files/cart.csv", "a") or die("WTF");
+    $quantity = $_POST["quantity"];
+    $code = $_POST["code"];
+    $text = $code . "," . $quantity . "\n";
+    fwrite($cartSource, $text);
 
-
-
-      while ($row = fgetcsv($products)) {
-        if ($row[0] == $productId) {
-          $product = $row;
-          break;
-        }
-     }
-
-
-
-     $code = $product[0];
-     $name = $product[1];
-     $price = $product[3];
-     $description = $product[2];
-     $aisle = $product[4];
-     $asset = strtolower(str_replace(" ", "_", $name));
-
-
-     $imgPath = "assets/" . $aisle . "/" . $asset . ".jpg";
-    $img = "<img class=\"detail-item_img\"  src=\"../" . $imgPath . "\"alt=\"" . $asset . "\" />";
-
-     fclose($products);
-
-    if(isset($_POST["submit"])) {
-        $cartSource = fopen("../files/cart.csv", "a") or die("WTF");
-        $quantity = $_POST["quantity"];
-        $code = $_POST["code"];
-        $text = $code . "," . $quantity . "\n";
-        fwrite($cartSource, $text);
-
-        fclose($cartSource);
-    }
-  ?>
+    fclose($cartSource);
+}
+?>
 <html lang = "en">
 <head>
     <meta charset="utf-8">
@@ -50,70 +39,70 @@
     <link rel="stylesheet" href="../Application/css/product-detail.css" />
     <title>STORE</title>
     <style>
-    img {
-        height: 100px;
-    }
+        img {
+            height: 100px;
+        }
 
     </style>
 </head>
 <body>
-  <?php
-    include "../navbar.php";
-  ?>
-  <div class="">
-      <div class="content">
-          <div class="detail-item">
-              <div class="detail-item_img-wrapper">
-              <?php
-                  echo $img;
+<?php
+include "../navbar.php";
+?>
+<div class="">
+    <div class="content">
+        <div class="detail-item">
+            <div class="detail-item_img-wrapper">
+                <?php
+                echo $img;
                 ?>
-              </div>
-              <div class="detail-item_content">
-                  <div class="detail-item_content--header">
-                      <div class="detail-item_content--header-name">
-                          <p class="item--title">
+            </div>
+            <div class="detail-item_content">
+                <div class="detail-item_content--header">
+                    <div class="detail-item_content--header-name">
+                        <p class="item--title">
                             <?php
-                               echo $name;
-                             ?>
-                          </p>
+                            echo $name;
+                            ?>
+                        </p>
 
-                      </div>
-                      <div class="landing-item_content--header-price">
-                            <?php
-                               echo $price . "$";
-                             ?>
-                      </div>
-                  </div>
-                  <p class="item--desc">
-                      <?php
-                         echo $description;
-$moreDescription = "";
-                         if ($moreDescription != "") {
-                            echo "<br /><br />
+                    </div>
+                    <div class="landing-item_content--header-price">
+                        <?php
+                        echo $price . "$";
+                        ?>
+                    </div>
+                </div>
+                <p class="item--desc">
+                    <?php
+                    echo $description;
+                    $moreDescription = "";
+                    if ($moreDescription != "") {
+                        echo "<br /><br />
                                 <a href=\"more-info.php?code=$code\">
                                     More information...
                                 </a>";
-                         }
+                    }
 
-                       ?>
-                  </p>
-                  <div class="item--add-to-bag">
-                      <form method="post">
-                          <label for="quantity">Quantity</label>
-                          <input id="quantity" name="quantity" type="text" value="1" />
-                          <input name="code" type="hidden" value=<?php echo '"' . $code . '"'; ?> />
-                          <button type="submit" name="submit">Add to Cart</button>
-                      </form>
-                      <div id="error"></div>
-                      <div id="success"></div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+                    ?>
+                </p>
+                <div class="item--add-to-bag">
+                    <form action="addToCart.php" method="post">
+                        <label for="quantity">Quantity</label>
+                        <input id="quantity" name="quantity" type="text" value="1" />
+                        <input name="code" type="hidden" value=<?php echo '"' . $code . '"'; ?> />
+                        <button type="submit" name="submit">Add to Cart</button>
+                    </form>
+                    <div id="error"></div>
+                    <div id="success"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <?php
-    include "../footer.php";
-   ?>
+<?php
+include "../footer.php";
+?>
 </body>
 </html>
