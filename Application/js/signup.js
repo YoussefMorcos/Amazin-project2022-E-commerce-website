@@ -23,45 +23,35 @@ function validateRegistration()         // on submit
                 email.focus();
                 return false;
             } 
-            // else
-            //     // email pattern
-            //     var pattern = /^\b.[A-Z0-9\._-]*@(?:[A-Z0-9].\B)+(?:.[A-Z]{2,3})+$/i;
-            //
-            //     // validate email pattern
-            //     if (!(pattern.test(email.value)))
-            //     {
-            //         alert("It is an invalid email address. Please try again.");
-            //         return false;
-            //     }
+            else
+                // validate email and email confirmation
+                if (email.value != confirmEmail.value)
+                {
+                    checkEmail();
+                    return false;
+                }
                 else
-                    // validate email and email confirmation
-                    if (email.value != confirmEmail.value)
+                    // validate no empty input
+                    if (pwd.value=="" || pwd.value==null) 
                     {
-                        checkEmail();
+                        alert("Please provide a valid password.");
+                        pwd.focus();
                         return false;
-                    }
+                    } 
                     else
-                        // validate no empty input
-                        if (pwd.value=="" || pwd.value==null) 
+                        // make sure the requirements of password are met
+                        var upperCase = /[A-Z]/g;
+                        var numbers = /[0-9]/g;
+
+                        if (!(pwd.value.match(upperCase)) || !(pwd.value.match(numbers)) || (pwd.value.length < 8) ) 
                         {
-                            alert("Please provide a valid password.");
+                            alert("The password provided does not meet the minimum requirements. Please try again.");
                             pwd.focus();
                             return false;
                         } 
                         else
-                            // make sure the requirements of password are met
-                            var upperCase = /[A-Z]/g;
-                            var numbers = /[0-9]/g;
-
-                            if (!(pwd.value.match(upperCase)) || !(pwd.value.match(numbers)) || (pwd.value.length < 8) ) 
-                            {
-                                alert("The password provided does not meet the minimum requirements. Please try again.");
-                                pwd.focus();
-                                return false;
-                            } 
-                            else
-                                // validate the password and password confirmation
-                                if (pwd.value != confirmPwd.value)
+                            // validate the password and password confirmation
+                            if (pwd.value != confirmPwd.value)
                             {
                                 checkPwd();
                                 return false;
@@ -104,42 +94,22 @@ function validateRegistration()         // on submit
                                         postalCode.focus();
                                         return false;
                                     }
-                                    // else
-                                    //     if(phoneNumber.value == "" || phoneNumber.value==null)
-                                    //     {
-                                    //         alert("Please provide a phone number. Format : 123-123-1234");
-                                    //         phoneNumber.focus();
-                                    //         return false;
-                                    //     }
-                                        // else
-                                        //     var phonePattern = /^\d{3}-\d{3}-\d{4}$/;
-                                        //     if (!(phonePattern.test(phoneNumber.value)))
-                                        //     {
-                                        //         alert("Please provide a valid phone number in this following format : 123-123-1234");
-                                        //         phoneNumber.focus();
-                                        //         return false;
-                                        //     }
-                                        //     else
-                                        //         if(!(cardnumber.value =="") || !(cardnumber.value == null))
-                                        //         {
-                                        //             checkCard();
-                                        //             return false;
-                                        //         }
-                                                else
-                                                    var newsLetter = document.getElementById("newsLetter").checked;
-                                                    if(!(newsLetter))
-                                                    {
-                                                        alert("You must agree to the newsletter notification in order to sign up for a membership. You can withdraw your consent later.");
-                                                        return false;
-                                                    }
-                                                    else
-                                                        var agreement = document.getElementById("agreement").checked;
-                                                        if(!(agreement)) 
-                                                        {
-                                                            alert("You must to the terms in order to sign up for a membership.");
-                                                            return false;
-                                                        } 
-                                                        else
+
+                                    else
+                                        var newsLetter = document.getElementById("newsLetter").checked;
+                                        if(!(newsLetter))
+                                        {
+                                            alert("You must agree to the newsletter notification in order to sign up for a membership. You can withdraw your consent later.");
+                                            return false;
+                                        }
+                                        else
+                                            var agreement = document.getElementById("agreement").checked;
+                                            if(!(agreement)) 
+                                            {
+                                                alert("You must to the terms in order to sign up for a membership.");
+                                                return false;
+                                            } 
+                                            else
 
      return true;
 }

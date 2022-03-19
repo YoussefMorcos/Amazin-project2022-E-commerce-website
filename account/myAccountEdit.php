@@ -28,13 +28,13 @@ session_start();
   <!-- menu bar-->  
   <?php
         include "../navbar.php";
-  $db= mysqli_connect("localhost", "root","321trewq", "amazin","3306") or die ("fail");
-  $username = $_SESSION['username'];
+        $db= mysqli_connect("localhost", "root","321trewq", "amazin","3306") or die ("fail");
+        $username = $_SESSION['username'];
 
-  $query="SELECT * FROM customers where username='$username'";
-  $result=mysqli_query($db,$query);
-  $row = $result->fetch_assoc();
-  $_SESSION['email'] = $row['email'];
+        $query="SELECT * FROM customers where username='$username'";
+        $result=mysqli_query($db,$query);
+        $row = $result->fetch_assoc();
+        $_SESSION['email'] = $row['email'];
   ?>
 
     <!--content space-->
