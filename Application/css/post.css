@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Redressed&family=Zilla+Slab&display=swap');
+
+body {
+background: white;
+	font-family: Zilla Slab;
+  margin:0;
+  font-size:12px;
+  height: 120%;
+}
+
+
+textarea {
+  width: 500px;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 5px solid black;
+  border-radius: 15px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  resize: none;
+  box-shadow: 5px 10px #888888;
+}
+
+#text {
+width: 100px;
+  height: 10px;
+  padding: 12px 20px;
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: #f8f8f8;
+  font-size: 14px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  resize: none;
+  box-shadow: 5px 10px #888888;
+}
+
+.header {
+  top:0;
+  padding: 5px;
+  text-align: center;
+  color: black;
+  height:100%;
+  font-size: 12px;
+}
+
+.labelprod{
+color:black;
+font-weight:bold;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+	
