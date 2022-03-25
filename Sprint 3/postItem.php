@@ -2,20 +2,20 @@
 <html>
 <head>
     <title>AMAZIN</title>
-	<link rel="stylesheet" href="Application/css/post.css">
+	<link rel="stylesheet" href="../Application/css/post.css">
 	<meta charset="UTF-8">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Application/css/footer.css" />
-    <link rel="stylesheet" href="Application/css/menu-bar.css" />
-    <link rel="stylesheet" href="Application/css/index.css" />
+    <link rel="stylesheet" href="../Application/css/footer.css" />
+    <link rel="stylesheet" href="../Application/css/menu-bar.css" />
+    <link rel="stylesheet" href="../Application/css/index.css" />
 
 
 </head>
 <body>
   <!-- menu bar-->  
   <?php
-        //include "navbar.php";
+        include "../navbar.php";
   ?>
 
 <div class="header">
@@ -68,7 +68,7 @@
 </script>
 
 <?php
-    include "footer.php";
+    include "../footer.php";
   ?>
 
 </body>
