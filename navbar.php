@@ -70,17 +70,24 @@ if(!isset($_SESSION))
                       }else if (str_contains($_SERVER['REQUEST_URI'],"/account/")) {
                           echo "<a href='../account/logIn.php'  style=\"margin-right: 20px;\"> Login </a>";
 
-                      }else echo "<a href='account/logIn.php'  style=\"margin-right: 20px;\"> Login </a>";
-                    ?>
+                      }else  echo "<a href='account/logIn.php'  style=\"margin-right: 20px;\"> Login </a>";
+?>
+
                     <li><?php if (str_contains($_SERVER['REQUEST_URI'], "/products/")) {
                                     echo '<form method="post" action="Search-Result.php">';
                                 }else echo '<form method="post" action="products/Search-Result.php">';?>
+
+
                         <form method="post" action="products/Search-Result.php">
                             <?php $search = isset($_POST['search']) ? $_POST['search'] : ''; ?>
 
-                            <input style="height: 30px;width: 300px;margin-left: 100px" type="text" name="search" placeholder="Search for a product" value=<?php echo $search;?>>
+                            <input style="height: 30px;width: 300px;margin-left: 30px" type="text" name="search" placeholder="Search for a product" value=<?php echo $search;?>>
 
                         </form>
+                        <?php
+                        echo "<li><a href='Sprint%203/postItem.php'  style=\"margin-left: 30px;\"> Post an item </a></li>";
+
+                        ?>
 
                     </li>
 

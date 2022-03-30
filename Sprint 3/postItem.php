@@ -52,7 +52,6 @@
 <input type="button" id="bt" value="Sell Item"><br><br>	 
 </div>	 
 
-<input type="button" id="bt" value="Sell Item"><br><br>	 
 
 </form>
 
