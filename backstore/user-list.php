@@ -33,18 +33,29 @@
                     <th>User</th>
                     <th>ID</th>
                 </tr>
-                <form method='post' action='user-edit.php'>
-                <tr>
-                    <td><button type='submit' name='submit'>Edit</button></td>
-                    <td><input type='hidden' name='first-name' value='sample1'/>sample1</td>
-                    <td><input type='hidden' name='last-name' value='sample1'/>sample1</td>
-                    <td><input type='hidden' name='password' value='sample1'/>sample1</td>
-                    <td><input type='hidden' name='postal-code' value='sample1'/>sample1</td>
-                    <td><input type='hidden' name='email' value='sample1'/>sample1</td>
-                    <td><input type='hidden' name='user' value='sample1'/>sample1</td>
-                    <td><input type='hidden' name='id' value='sample1'/>sample1</td>
-                </tr>
-                </form>
+                <?php
+
+                    $number = 5;
+
+                    while($number >= 0) {
+                        echo "<form method='post' action='user-edit.php'>";
+                        echo "<td><input type='checkbox'/></td>";
+                        echo "<td><input type='hidden' name='first-name' value='sample'/>sample</td>";
+                        echo "<td><input type='hidden' name='last-name' value='sample'/>sample</td>";
+                        echo "<td><input type='hidden' name='password' value='sample'/>sample</td>";
+                        echo "<td><input type='hidden' name='postal-code' value='sample'/>sample</td>";
+                        echo "<td><input type='hidden' name='email' value='sample'/>sample</td>";
+                        echo "<td><input type='hidden' name='user' value='sample'/>sample</td>";
+                        echo "<td><input type='hidden' name='ID' value='sample'/>sample</td>";
+                        echo "<td><button type='submit' name='submit'>Edit</button></td>";
+                        echo '</tr>';
+                        echo "</form>";
+
+                        $number--;
+                    }
+
+                    ?>
+
         </table>
         <form method="post">
         <div class="buttons">
