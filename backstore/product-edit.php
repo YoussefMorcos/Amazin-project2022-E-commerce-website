@@ -60,12 +60,6 @@
                     ?>
                 </tr>
                 <tr>
-                    <th><label for="moreDescription">More Description</label></th>
-                    <?php
-                        echo "<td><input type='text' name='moreDescription1' value='$moreDescription' /></td>" ;
-                    ?>
-                </tr>
-                <tr>
                     <th><label for="origin">Origin</label></th>
                     <?php
                         echo "<td><input type='text' name='origin1' value='$origin' /></td>" ;

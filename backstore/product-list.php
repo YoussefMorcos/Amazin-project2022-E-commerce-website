@@ -15,7 +15,13 @@
     <?php
       include "../snippets/navbar.php";
     ?>
-
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 
     <div class="container">
         <h2 class="list-products">List of Products</h2>
@@ -29,7 +35,6 @@
                     <th>Name</th>
                     <th>Price</th>
                     <th>Description</th>
-                    <th>More Description</th>
                     <th>Origin</th>
                     <th>Aisle</th>
                     <th>Stock</th>
@@ -46,7 +51,6 @@
                         echo "<td><input type='hidden' name='name' value='sample'/>sample</td>";
                         echo "<td><input type='hidden' name='price' value='sample'/>sample</td>";
                         echo "<td><input type='hidden' name='description' value='sample'/>sample</td>";
-                        echo "<td><input type='hidden' name='moreDescription' value='sample'/>sample</td>";
                         echo "<td><input type='hidden' name='origin' value='sample'/>sample</td>";
                         echo "<td><input type='hidden' name='aisle' value='sample'/>sample</td>";
                         echo "<td><input type='hidden' name='stock' value='sample'/>sample</td>";
@@ -59,6 +63,8 @@
 
                 ?>
             </table>
+                </br>
+                </br>
                 <form method="post">
                 <div class="buttons">
                     <label>Code ID </label><input type="text" name="codeID"/>
@@ -69,6 +75,13 @@
     </div>
 
 
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 
     <?php
         include "../snippets/footer.php";

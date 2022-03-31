@@ -22,7 +22,7 @@
 </br>
 </br>
 </br>
-</br>
+</br> 
 
   <form id="product-add" method="post">
     <table class="product-add-table" id="product-add-table">
@@ -37,10 +37,6 @@
                 <tr>
                     <th><label for="description">Description</label></th>
                     <td><textarea id="description" name="description"></textarea></td>
-                </tr>
-                <tr>
-                    <th><label for="moreDescription">More Description</label></th>
-                    <td><textarea id="moreDescription" name="moreDescription"></textarea></td>
                 </tr>
                 <tr>
                     <th><label for="origin">Origin</label></th>

@@ -15,7 +15,13 @@
     <?php
       include "../snippets/navbar.php";
     ?>
-
+  </br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 
     <div class="container">
         <h2>List of Users</h2>
@@ -30,8 +36,9 @@
                     <th>Password</th>
                     <th>Postal Code</th>
                     <th>Email</th>
-                    <th>User</th>
+                    <th>Username</th>
                     <th>ID</th>
+                    <th>Address</th>
                 </tr>
                 <?php
 
@@ -45,8 +52,9 @@
                         echo "<td><input type='hidden' name='password' value='sample'/>sample</td>";
                         echo "<td><input type='hidden' name='postal-code' value='sample'/>sample</td>";
                         echo "<td><input type='hidden' name='email' value='sample'/>sample</td>";
-                        echo "<td><input type='hidden' name='user' value='sample'/>sample</td>";
+                        echo "<td><input type='hidden' name='username' value='sample'/>sample</td>";
                         echo "<td><input type='hidden' name='ID' value='sample'/>sample</td>";
+                        echo "<td><input type='hidden' name='address' value='sample'/>sample</td>";
                         echo "<td><button type='submit' name='submit'>Edit</button></td>";
                         echo '</tr>';
                         echo "</form>";
@@ -57,6 +65,8 @@
                     ?>
 
         </table>
+        </br>
+        </br>
         <form method="post">
         <div class="buttons">
         <label>User ID </label><input type="text" name="userID"/>
@@ -66,6 +76,9 @@
         </form>
     </div>
 
+    </br>
+</br>
+</br>
 </br>
 </br>
 </br>

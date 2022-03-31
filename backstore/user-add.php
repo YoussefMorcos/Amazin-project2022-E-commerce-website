@@ -37,7 +37,7 @@
             </tr>
             <tr>
                 <th><label for="password">Password</label></th>
-                <td><input id="password" type="text" name="password"/></td>
+                <td><input id="password" type="password" name="password"/></td>
             </tr>
             <tr>
                 <th><label for="postal-code">Postal Code</label></th>
@@ -49,8 +49,12 @@
             </tr>
             </div>
             <tr>
-                <th><label for="user">User</label></th>
-                <td><input id="user" type="text" name="user"/></td>
+                <th><label for="username">Username</label></th>
+                <td><input id="username" type="text" name="username"/></td>
+            </tr>
+            <tr>
+                <th><label for="address">Address</label></th>
+                <td><textarea id="address" name="address"></textarea></td>
             </tr>
 
         </table>
