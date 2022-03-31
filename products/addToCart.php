@@ -11,7 +11,7 @@ if(isset($_SESSION["username"]))    // USER LOGGED IN
     $quantitycheck = "SELECT quantity FROM products where id='$productId'";
     $quantityresult = mysqli_query($db, $quantitycheck);
     $rowQcheck = $quantityresult->fetch_assoc();
-    if ($rowQcheck['quantity'] > $quantity) {
+    if ($rowQcheck['quantity'] >= $quantity) {
         $query = "SELECT id FROM customers where username='$username'";
         $result = mysqli_query($db, $query);
         $row = $result->fetch_assoc();

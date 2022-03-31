@@ -24,7 +24,8 @@ $query2 = "select products.id, products.name,category,description,price,imgPath,
 from products,carts
 where carts.customerId = '$userId' and carts.productId = products.id ;";
 $result2 = mysqli_query($db, $query2);
-
+$query3 = "select quantity from carts carts.customerId = '$userId' and carts.productId = products.id; ";
+$result3 = mysqli_query($db,$query3);
 ?>
 <?php
 include "../navbar.php";
@@ -47,6 +48,9 @@ include "../navbar.php";
             $imgPath = "../" . $row['imgPath'] . "/";
             $linkPath = "../products/product-detail.php?code=" . $code;
             $img = "<img class=\"landing-item_img\"  src=\"" . $imgPath . "\"alt=\"" . $asset . "\" />";
+
+            $quantity = $row['quantity'];
+            $_SESSION['quantity'] = $quantity;
 
             $item = "<a class=\"landing-item__link\" href=\"" . $linkPath . "\">
                                <div class=\"landing-item\">
@@ -73,10 +77,24 @@ include "../navbar.php";
                                        <p class=\"item--desc\">
                                            " . $description . "
                                        </p>
+                                       
+                                       
                                    </div>
+                                 
+                                   
                                </div>
-                           </a>";
+                          
+                            </a>
+                            <form style='position: relative;left: 1000px' action='../products/removeFromCart.php' method='post'>
+                        <label for='quantity'>Quantity</label>
+                        <input id='quantity' name='quantity' type='text' value='1' />
+                         <input name='code' type='hidden' value=  $code  />
+                        <button type='submit' name='remove'>Remove</button>
+                    </form>
+                          
+                           ";
             echo $item;
+
         }
         ?>
     </div>
