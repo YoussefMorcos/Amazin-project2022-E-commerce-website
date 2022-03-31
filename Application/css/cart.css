@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Redressed&family=Zilla+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+html, body{height: 120%}
+
+
+body, form{font-family: Zilla Slab;}
+
+.checkout-btn{text-align: center; font-family: Libre Baskerville; font-style: italic; font-size: 20pt;
+justify-content: center;padding-top:5%;}
+
+.btn-style{color: white;
+    background-color: #2d5c83;
+    font-size: 15pt;
+    font-family: Libre Baskerville; 
+    text-align: center;
+    padding: 14px 40px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.btn-style:hover {
+    background-color: #96bde9;
+    color: white;
+}
+
+.price-display{
+    text-align: right; 
+    font-family: Libre Baskerville; 
+    font-style: italic; 
+    font-size: 20pt;
+    justify-content: center;
+    padding-top:0.5%;
+    padding-right: 5%;
+}
+
+
+
+
+
+
+
+

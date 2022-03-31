@@ -6,7 +6,15 @@
     <link rel="stylesheet" href="../Application/css/menu-bar.css"/>
     <link rel="stylesheet" href="../Application/css/footer.css"/>
     <link rel="stylesheet" href="../Application/css/product-landing.css"/>
-    <title>STORE</title>
+    <link rel="stylesheet" href="../Application/css/cart.css"/>
+
+    <!--bootstrap from w3school https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>AMAZIN</title>
 </head>
 <body>
 <?php
@@ -33,7 +41,7 @@ include "../navbar.php";
     <div class="header">
         <h1>Your Cart</h1>
     </div>
-    <div class="content">
+    <div class="content" style="height: 100%;">
         <?php
         while ($row = mysqli_fetch_assoc($result2)) {
             $code = $row['id'];
@@ -78,8 +86,20 @@ include "../navbar.php";
                            </a>";
             echo $item;
         }
-        ?>
+       ?>
     </div>
+</div>
+
+<!-- PUT THE TOTAL PRICE IN HERE -->
+<div class="price-display">
+    Total price: $
+</div>
+
+
+<div class="checkout-btn">
+    <button type="submit" name="CheckoutBtn" class="btn-style" onclick="document.location.href='#'">Proceed to checkout</button> 
+        <br/>
+        <br/>
 </div>
 
 <?php
