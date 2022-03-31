@@ -26,8 +26,8 @@ include "../navbar.php";
 <?php
 while($row = mysqli_fetch_assoc($result)) {
     $img = "<img class=\"landing-item_img\"  src=\"../" . $row['imgPath'] . "\"alt=\"" .  "\" />";
-
-    $item =  "<a class=\"landing-item__link\" href=\"" . "\">
+    $linkPath = "product-detail.php?code=" . $row['id'];
+    $item = "<a class=\"landing-item__link\" href=\"" . $linkPath . "\">
 <div class=\"landing-item\">
     <div class=\"landing-item_img-wrapper\">
         " . $img . "

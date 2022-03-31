@@ -15,8 +15,8 @@ $db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die (
 $aisle = isset($_GET['aisle']) ? $_GET['aisle'] : 'general';
 $cleanAisle = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
 if($aisle != "general")
-$query = "SELECT * FROM products where category='$aisle'";
-else $query = "SELECT * FROM products";
+$query = "SELECT * FROM products,customers where category='$aisle' and customers.id = sellerId";
+else $query = "SELECT * FROM products,customers where sellerID = customers.id ";
 $result = mysqli_query($db, $query);
 
 ?>
@@ -29,6 +29,7 @@ include "../navbar.php";
     </div>
     <div class="content">
         <?php
+
         while ($row = mysqli_fetch_assoc($result)) {
             $code = $row['id'];
             $name = $row['name'];
@@ -59,13 +60,23 @@ include "../navbar.php";
                                                <p class=\"item--price\">
                                                    " . $price . "$
                                                </p>
+                                                   <div class=\"landing-item_content--header-price\">
+                <p style='float: right' class=\"item--price\">
+                   seller: " . $row['username'] . "<br>
+                   seller ID: " . $row['sellerID'] . "<br>
+                   product id: ".$code."<br>
+                   <B>only ".$row['quantity']." left in stock!</B>
+                </p>
+            </div>
                                            </div>
 
                                        </div>
                                        <p class=\"item--desc\">
                                            " . $description . "
                                        </p>
+                                   
                                    </div>
+                                   
                                </div>
                            </a>";
             echo $item;

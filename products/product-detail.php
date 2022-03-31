@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <?php
 session_start();
+
 $productId = $_GET["code"];
 $db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
 $aisle = isset($_GET['aisle']) ? $_GET['aisle'] : 'general';
 $cleanAisle = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
-$query = "SELECT * FROM products where id='$productId'";
+$query = "SELECT * FROM products,customers where sellerID = customers.id  and products.id = '$productId'";
 $result = mysqli_query($db, $query);
 $row = $result->fetch_assoc();
 $code = $row['id'];
 $_SESSION['code'] = $code;
 $name = $row['name'];
 $price = $row['price'];
+
 $description = $row['description'];
 $aisle = $row['category'];
 $asset = strtolower(str_replace(" ", "_", $name));
@@ -71,6 +73,7 @@ include "../navbar.php";
                         <?php
                         echo $price . "$";
                         ?>
+
                     </div>
                 </div>
                 <p class="item--desc">
@@ -85,14 +88,29 @@ include "../navbar.php";
                     }
 
                     ?>
+                <div class=\"landing-item_content--header-price\">
+                    <p style='float: right' class=\"item--price\">
+                        seller:  <?php echo  $row['username'] ;?><br>
+                        seller ID:  <?php echo $row['sellerID'] ;?> <br>
+                        product id: <?php echo $row['id'];?><br>
+                       <?php echo "<B>only ".$row['quantity']." left in stock!</B>";?>
+                    </p>
+                </div>
                 </p>
                 <div class="item--add-to-bag">
-                    <form action="addToCart.php" method="post">
-                        <label for="quantity">Quantity</label>
-                        <input id="quantity" name="quantity" type="text" value="1" />
-                        <input name="code" type="hidden" value=<?php echo '"' . $code . '"'; ?> />
-                        <button type="submit" name="submit">Add to Cart</button>
-                    </form>
+                    <?php if(isset($_SESSION['username']) and $_SESSION['username']!= $row['username']){
+                        echo "<form action='addToCart.php' method='post'>
+                        <label for='quantity'>Quantity</label>
+                        <input id='quantity' name='quantity' type='text' value='1' />
+                        <input name='code' type='hidden' value=  $code  />
+                        <button type='submit' name='submit'>Add to Cart</button>
+                    </form>";
+                    }else{
+                        echo"<h2>You are selling this item!
+                        you have ".$row['quantity']. " left in our stock </h2>";
+                    }?>
+
+
                     <div id="error"></div>
                     <div id="success"></div>
                 </div>
