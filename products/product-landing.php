@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php
-
+include "../navbar.php";
 $db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
 $aisle = isset($_GET['aisle']) ? $_GET['aisle'] : 'general';
 $cleanAisle = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
@@ -21,7 +21,7 @@ $result = mysqli_query($db, $query);
 
 ?>
 <?php
-include "../navbar.php";
+
 ?>
 <div class="container">
     <div class="header">

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
-session_start();
+include "../navbar.php";
+
 
 $productId = $_GET["code"];
 $db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
@@ -13,6 +14,7 @@ $code = $row['id'];
 $_SESSION['code'] = $code;
 $name = $row['name'];
 $price = $row['price'];
+$type = $row['type'];
 
 $description = $row['description'];
 $aisle = $row['category'];
@@ -49,7 +51,7 @@ if(isset($_POST["submit"])) {
 </head>
 <body>
 <?php
-include "../navbar.php";
+
 ?>
 <div class="">
     <div class="content">
@@ -98,17 +100,24 @@ include "../navbar.php";
                 </div>
                 </p>
                 <div class="item--add-to-bag">
-                    <?php if(isset($_SESSION['username']) and $_SESSION['username']!= $row['username']){
-                        echo "<form action='addToCart.php' method='post'>
+<?php if($type=="seller"){ echo"
+    <form action='sellerProducts.php' method='post'>
+             
+                        <input name='code' type='hidden' value=  $code  />
+                        <button type='submit' name='Edit'>Edit</button>
+                        <button type='submit' name='Delete'>Delete</button>
+                    </form>";
+
+}else{
+    echo"
+                    <form action='addToCart.php' method='post'>
                         <label for='quantity'>Quantity</label>
                         <input id='quantity' name='quantity' type='text' value='1' />
                         <input name='code' type='hidden' value=  $code  />
                         <button type='submit' name='submit'>Add to Cart</button>
                     </form>";
-                    }else{
-                        echo"<h2>You are selling this item!
-                        you have ".$row['quantity']. " left in our stock </h2>";
                     }?>
+
 
 
                     <div id="error"></div>
