@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $id = isset($_SESSION['code']) ? $_SESSION['code'] : '';
 $db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");$query="SELECT * FROM PublicHealthWorker where id='$id'";
 $query = "select * from products where id = '$id'";
@@ -49,8 +48,9 @@ if(isset($_POST['Save'])) {
                     quantity='$quantity'
                 WHERE id='$id'";
     mysqli_query($db,$EditProductQuery);
+
     echo "<script>
-          window.location.href='sellerMyProducts.php';
+          window.location.href='../index.php';
           alert('This product information has been updated successfully into the system');
           </script>";
 }

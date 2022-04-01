@@ -18,6 +18,7 @@ $query = "SELECT id FROM customers where username = '$username'";
 $result = mysqli_query($db,$query);
 $row2 = $result->fetch_assoc();
 $userId = $row2['id'];
+$_SESSION['id'] = $userId;
 
 
 $query2 = "select products.id, products.name,category,description,price,imgPath,sellerId ,carts.quantity
@@ -36,10 +37,15 @@ include "../navbar.php";
     </div>
     <div class="content">
         <?php
+        $total = 0;
         while ($row = mysqli_fetch_assoc($result2)) {
             $code = $row['id'];
             $name = $row['name'];
             $price = $row['price'];
+
+            $quantity = $row['quantity'];
+            $_SESSION['quantity'] = $quantity;
+            $total = $total + $price*$quantity;
             $description = $row['description'];
             $aisle = $row['category'];
             $asset = strtolower(str_replace(" ", "_", $name));
@@ -49,8 +55,7 @@ include "../navbar.php";
             $linkPath = "../products/product-detail.php?code=" . $code;
             $img = "<img class=\"landing-item_img\"  src=\"" . $imgPath . "\"alt=\"" . $asset . "\" />";
 
-            $quantity = $row['quantity'];
-            $_SESSION['quantity'] = $quantity;
+
 
             $item = "<a class=\"landing-item__link\" href=\"" . $linkPath . "\">
                                <div class=\"landing-item\">
@@ -96,7 +101,15 @@ include "../navbar.php";
             echo $item;
 
         }
-        ?>
+
+        if ($total > 0 ) {
+            echo "<b>total is: " . $total . "<br></b>";
+            echo "
+<form method='post' action='placeOrder.php'>
+<br><input  type='submit' value='Place Order' style='background: cornflowerblue; color: white' name='order'><br>
+</form>";
+
+        }?>
     </div>
 </div>
 

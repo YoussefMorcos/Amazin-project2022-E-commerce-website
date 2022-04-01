@@ -9,12 +9,19 @@ $aisle = isset($_GET['aisle']) ? $_GET['aisle'] : 'general';
 $cleanAisle = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
 $query = "SELECT * FROM products,customers where sellerID = customers.id  and products.id = '$productId'";
 $result = mysqli_query($db, $query);
+if (isset($_SESSION["username"])){
+    $username = $_SESSION['username'];
+    $query2 = "select * from customers where username = '$username'";
+    $result2 = mysqli_query($db,$query2);
+
+}
+$row2 = $result2->fetch_assoc();
 $row = $result->fetch_assoc();
 $code = $row['id'];
 $_SESSION['code'] = $code;
 $name = $row['name'];
 $price = $row['price'];
-$type = $row['type'];
+$type = $row2['type'];
 
 $description = $row['description'];
 $aisle = $row['category'];
@@ -100,7 +107,8 @@ if(isset($_POST["submit"])) {
                 </div>
                 </p>
                 <div class="item--add-to-bag">
-<?php if($type=="seller"){ echo"
+<?php if($type=="seller" or $type == "admin"){ echo"
+$type
     <form action='sellerProducts.php' method='post'>
              
                         <input name='code' type='hidden' value=  $code  />
