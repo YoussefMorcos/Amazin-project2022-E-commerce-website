@@ -138,7 +138,7 @@ if(!isset($_SESSION['username'])){
                                 echo " <li class='menu-item'><a href='account/cart.php'>Cart</a></li>";
                             }?>
 
-                            <li class="menu-item"><a href="">Deals</a></li>
+                            <li class="menu-item"><a href="account/myOrders.php">My Orders</a></li>
                             <?php
                             if(isset($_SESSION["admin"])) {
                                 echo "<li class='menu-item'><a href=''>Admin</a>";
@@ -261,20 +261,20 @@ if(!isset($_SESSION['username'])){
                             }else{ echo "<li class='menu-item'><a href='myAccount.php'>Account</a></li>";}?>
                             <?php if(str_contains($_SERVER['REQUEST_URI'],"/products/")){
 
-                                echo' <li class="menu-item"><a href="product-landing.php"> Users</a>';
-                            }else echo ' <li class="menu-item"><a href="products/product-landing.php"> Users</a>'
+                                echo' <li class="menu-item"><a href="adminUsers.php"> Users</a>';
+                            }else echo ' <li class="menu-item"><a href="account/adminUsers.php"> Users</a>'
 
                             ?>
 
 
                             <?php if(isset($_SESSION['username'])){
-                                echo " <li class='menu-item'><a href='account/cart.php'>Sellers</a></li>";
+                                echo " <li class='menu-item'><a href='account/adminSellers.php'>Sellers</a></li>";
                             }
                             echo "<li class='menu-item'><a   href='Sprint%203/postItem.php' \"> Orders </a></li>";
 
                             ?>
 
-                            <li class="menu-item"><a href="">Products</a></li>
+                            <li class="menu-item"><a href="account/adminProducts.php">Products</a></li>
                             <?php
                             if(isset($_SESSION["admin"])) {
                                 echo "<li class='menu-item'><a href=''>Admin</a>";
