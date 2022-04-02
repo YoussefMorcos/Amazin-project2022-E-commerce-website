@@ -115,7 +115,7 @@ include "../navbar.php";
 
 
 <div class="checkout-btn">
-    <button type="submit" name="CheckoutBtn" class="btn-style" onclick="document.location.href='#'">Proceed to checkout</button> 
+    <button type="submit" name="CheckoutBtn" class="btn-style" onclick="document.location.href='checkout.php'">Proceed to checkout</button> 
         <br/>
         <br/>
 </div>
