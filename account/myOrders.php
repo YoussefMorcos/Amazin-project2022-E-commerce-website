@@ -23,7 +23,7 @@
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-    <title>STORE</title>
+    <title>My Orders</title>
 </head>
 <body>
 
@@ -73,6 +73,7 @@ $db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die (
 $query = "select Distinct oid ,date from orders where customerId = '$id'";
 $result = mysqli_query($db,$query);
 
+
 $totalPriceQuery = "select SUM(total) as orderTotal from orders where customerId = '$id' group by oid ";
 $result2 = mysqli_query($db,$totalPriceQuery);
 while($row = mysqli_fetch_assoc($result) and $row2 = mysqli_fetch_assoc($result2)){
@@ -108,6 +109,8 @@ while($row = mysqli_fetch_assoc($result) and $row2 = mysqli_fetch_assoc($result2
    
 }
 
+include ('../footer.php');
 ?>
+
 
 </body>
