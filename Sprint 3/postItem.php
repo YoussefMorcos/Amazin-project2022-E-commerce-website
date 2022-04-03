@@ -2,20 +2,20 @@
 <html>
 <head>
     <title>AMAZIN</title>
-	<link rel="stylesheet" href="Application/css/post.css">
+	<link rel="stylesheet" href="../Application/css/post.css">
 	<meta charset="UTF-8">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Application/css/footer.css" />
-    <link rel="stylesheet" href="Application/css/menu-bar.css" />
-    <link rel="stylesheet" href="Application/css/index.css" />
+    <link rel="stylesheet" href="../Application/css/footer.css" />
+    <link rel="stylesheet" href="../Application/css/menu-bar.css" />
+    <link rel="stylesheet" href="../Application/css/index.css" />
 
 
 </head>
 <body>
   <!-- menu bar-->  
   <?php
-        //include "navbar.php";
+        include "../navbar.php";
   ?>
 
 <div class="header">
@@ -49,10 +49,9 @@
 <img id="output" width="250" 
      height="200"/><br><br>
 
-<input type="button" id="bt" value="Sell Item"><br><br>	 
+<input type="submit" name="Add" id="bt" value="Sell Item"><br><br>
 </div>	 
 
-<input type="button" id="bt" value="Sell Item"><br><br>	 
 
 </form>
 
@@ -68,7 +67,7 @@
 </script>
 
 <?php
-    include "footer.php";
+    include "../footer.php";
   ?>
 
 </body>

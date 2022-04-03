@@ -20,7 +20,7 @@
     <ul>
         <li class="footer-head-list-item">Contact Us</li>
         <br />
-        <li><a href="">Call</a></li>
-        <li><a href="/contact.php">Email</a></li>
+        <li><a href="contact.php">Call</a></li>
+        <li><a href="contact.php">Email</a></li>
     </ul>
 </div>

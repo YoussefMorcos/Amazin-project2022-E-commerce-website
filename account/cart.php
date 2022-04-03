@@ -10,38 +10,52 @@
 </head>
 <body>
 <?php
-include "../navbar.php";
-$db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
-$aisle = isset($_GET['aisle']) ? $_GET['aisle'] : 'general';
-$cleanAisle = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
-if($aisle != "general")
-$query = "SELECT * FROM products,customers where category='$aisle' and customers.id = sellerId";
-else $query = "SELECT * FROM products,customers where sellerID = customers.id ";
-$result = mysqli_query($db, $query);
+session_start();
 
+$username = $_SESSION['username'];
+$db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
+$query = "SELECT id FROM customers where username = '$username'";
+$result = mysqli_query($db,$query);
+$row2 = $result->fetch_assoc();
+$userId = $row2['id'];
+$_SESSION['id'] = $userId;
+
+
+$query2 = "select products.id, products.name,category,description,price,imgPath,sellerId ,carts.quantity
+from products,carts
+where carts.customerId = '$userId' and carts.productId = products.id ;";
+$result2 = mysqli_query($db, $query2);
+$query3 = "select quantity from carts carts.customerId = '$userId' and carts.productId = products.id; ";
+$result3 = mysqli_query($db,$query3);
 ?>
 <?php
-
+include "../navbar.php";
 ?>
 <div class="container">
     <div class="header">
-        <h1><?php echo $cleanAisle; ?></h1>
+        <h1>Your Cart</h1>
     </div>
     <div class="content">
         <?php
-
-        while ($row = mysqli_fetch_assoc($result)) {
+        $total = 0;
+        while ($row = mysqli_fetch_assoc($result2)) {
             $code = $row['id'];
             $name = $row['name'];
             $price = $row['price'];
+
+            $quantity = $row['quantity'];
+            $_SESSION['quantity'] = $quantity;
+            $total = $total + $price*$quantity;
             $description = $row['description'];
             $aisle = $row['category'];
             $asset = strtolower(str_replace(" ", "_", $name));
 
 
             $imgPath = "../" . $row['imgPath'] . "/";
-            $linkPath = "product-detail.php?code=" . $code;
+            $linkPath = "../products/product-detail.php?code=" . $code;
             $img = "<img class=\"landing-item_img\"  src=\"" . $imgPath . "\"alt=\"" . $asset . "\" />";
+
+
 
             $item = "<a class=\"landing-item__link\" href=\"" . $linkPath . "\">
                                <div class=\"landing-item\">
@@ -58,30 +72,44 @@ $result = mysqli_query($db, $query);
                                            </div>
                                            <div class=\"landing-item_content--header-price\">
                                                <p class=\"item--price\">
-                                                   " . $price . "$
+                                                   " . $price . "$<br> quantity: ". $row['quantity'] . "
+                                                   
+                                                   
                                                </p>
-                                                   <div class=\"landing-item_content--header-price\">
-                <p style='float: right' class=\"item--price\">
-                   seller: " . $row['username'] . "<br>
-                   seller ID: " . $row['sellerID'] . "<br>
-                   product id: ".$code."<br>
-                   <B>only ".$row['quantity']." left in stock!</B>
-                </p>
-            </div>
                                            </div>
 
                                        </div>
                                        <p class=\"item--desc\">
                                            " . $description . "
                                        </p>
-                                   
+                                       
+                                       
                                    </div>
+                                 
                                    
                                </div>
-                           </a>";
+                          
+                            </a>
+                            <form style='position: relative;left: 1000px' action='../products/removeFromCart.php' method='post'>
+                        <label for='quantity'>Quantity</label>
+                        <input id='quantity' name='quantity' type='text' value='1' />
+                         <input name='code' type='hidden' value=  $code  />
+                        <button type='submit' name='remove'>Remove</button>
+                    </form>
+                          
+                           ";
             echo $item;
+
         }
-        ?>
+
+        if ($total > 0 ) {
+            echo "<b>total is: " . $total . "<br></b>";
+            echo "
+<form method='post' action='placeOrder.php'>
+<br><input  type='submit' value='Place Order' style='background: cornflowerblue; color: white' name='order'><br>
+</form>";
+
+        }?>
     </div>
 </div>
 
