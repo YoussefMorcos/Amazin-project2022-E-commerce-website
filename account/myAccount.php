@@ -6,7 +6,10 @@ session_start();
 if(isset($_SESSION["username"]))    // USER LOGGED IN
 {
 
-if(!isset($_POST["logout"]) && !isset($_POST["edit"]))        // if button log out/edit is not clicked
+    include "../navbar.php";
+
+
+    if(!isset($_POST["logout"]) && !isset($_POST["edit"]))        // if button log out/edit is not clicked
 {
     ?>
     <html>
@@ -30,9 +33,7 @@ if(!isset($_POST["logout"]) && !isset($_POST["edit"]))        // if button log o
     </head>
     <body>
   <!-- menu bar-->  
-  <?php
-        include "../navbar.php";
-  ?>
+
 
 <div class="main-content">
 <!--welcome message-->

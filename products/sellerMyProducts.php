@@ -10,27 +10,27 @@
 </head>
 <body>
 <?php
+session_start();
 include "../navbar.php";
-$db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
-$aisle = isset($_GET['aisle']) ? $_GET['aisle'] : 'general';
-$cleanAisle = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
-if($aisle != "general")
-$query = "SELECT * FROM products,customers where category='$aisle' and customers.id = sellerId";
-else $query = "SELECT * FROM products,customers where sellerID = customers.id ";
-$result = mysqli_query($db, $query);
-
 ?>
 <?php
 
+$username = $_SESSION['username'];
+$db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
+$query = "SELECT * FROM products where sellerID = (select id from customers where username ='$username')";
+
+
 ?>
+
 <div class="container">
     <div class="header">
-        <h1><?php echo $cleanAisle; ?></h1>
+        <h1><?php echo "Your Products"; ?></h1>
     </div>
     <div class="content">
         <?php
-
+        $result = mysqli_query($db, $query);
         while ($row = mysqli_fetch_assoc($result)) {
+
             $code = $row['id'];
             $name = $row['name'];
             $price = $row['price'];
@@ -62,8 +62,6 @@ $result = mysqli_query($db, $query);
                                                </p>
                                                    <div class=\"landing-item_content--header-price\">
                 <p style='float: right' class=\"item--price\">
-                   seller: " . $row['username'] . "<br>
-                   seller ID: " . $row['sellerID'] . "<br>
                    product id: ".$code."<br>
                    <B>only ".$row['quantity']." left in stock!</B>
                 </p>
@@ -90,3 +88,4 @@ include "../footer.php";
 ?>
 </body>
 </html>
+

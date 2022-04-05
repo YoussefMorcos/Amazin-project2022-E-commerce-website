@@ -3,26 +3,16 @@
 include "../navbar.php";
 
 
-$productId = $_GET["code"];
+$code = $_SESSION['id'];
 $db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
-$aisle = isset($_GET['aisle']) ? $_GET['aisle'] : 'general';
-$cleanAisle = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
-$query = "SELECT * FROM products,customers where sellerID = customers.id  and products.id = '$productId'";
+$query = "SELECT * FROM products where id = '$code'";
 $result = mysqli_query($db, $query);
-if (isset($_SESSION["username"])){
-    $username = $_SESSION['username'];
-    $query2 = "select * from customers where username = '$username'";
-    $result2 = mysqli_query($db,$query2);
-
-}
-$row2 = $result2->fetch_assoc();
 $row = $result->fetch_assoc();
 $code = $row['id'];
+$quantity = $row['quantity'];
 $_SESSION['code'] = $code;
 $name = $row['name'];
 $price = $row['price'];
-$type = $row2['type'];
-
 $description = $row['description'];
 $aisle = $row['category'];
 $asset = strtolower(str_replace(" ", "_", $name));
@@ -60,6 +50,7 @@ if(isset($_POST["submit"])) {
 <?php
 
 ?>
+<form action="sellerProducts.php" method="post">
 <div class="">
     <div class="content">
         <div class="detail-item">
@@ -68,26 +59,28 @@ if(isset($_POST["submit"])) {
                 echo $img;
                 ?>
             </div>
+
             <div class="detail-item_content">
+
                 <div class="detail-item_content--header">
                     <div class="detail-item_content--header-name">
-                        <p class="item--title">
-                            <?php
-                            echo $name;
-                            ?>
-                        </p>
+                        <input class="item--title" name="name" value=" <?php
+                        echo $name;
+                        ?>"
+
+                        />
 
                     </div>
-                    <div class="landing-item_content--header-price">
-                        <?php
-                        echo $price . "$";
-                        ?>
+                    <input type="text"  name="price" value=" <?php
+                    echo $price ;
+                    ?>" class="landing-item_content--header-price"
 
-                    </div>
+
+                    />
                 </div>
-                <p class="item--desc">
+                <input class="item--desc" type="text" value="<?php
+                    echo $description;?>" name="description"/>
                     <?php
-                    echo $description;
                     $moreDescription = "";
                     if ($moreDescription != "") {
                         echo "<br /><br />
@@ -99,45 +92,27 @@ if(isset($_POST["submit"])) {
                     ?>
                 <div class=\"landing-item_content--header-price\">
                     <p style='float: right' class=\"item--price\">
-                        seller:  <?php echo  $row['username'] ;?><br>
-                        seller ID:  <?php echo $row['sellerID'] ;?> <br>
-                        product id: <?php echo $row['id'];?><br>
-                       <?php echo "<B>only ".$row['quantity']." left in stock!</B>";?>
+
+                        <?php echo "<B>only <input type='number' name='quantity' value='$quantity'> left in stock!</B>";?>
                     </p>
                 </div>
+         <?php echo"       <input name='code' type='hidden' value= $code>"?>
+                <button type="submit" name="Save">Save</button>
                 </p>
-                <div class="item--add-to-bag">
-<?php if($type=="seller" or $type == "admin"){ echo"
-$type
-    <form action='sellerProducts.php' method='post'>
-             
-                        <input name='code' type='hidden' value=  $code  />
-                        <button type='submit' name='Edit'>Edit</button>
-                        <button type='submit' name='Delete'>Delete</button>
-                    </form>";
-
-}else{
-    echo"
-                    <form action='addToCart.php' method='post'>
-                        <label for='quantity'>Quantity</label>
-                        <input id='quantity' name='quantity' type='text' value='1' />
-                        <input name='code' type='hidden' value=  $code  />
-                        <button type='submit' name='submit'>Add to Cart</button>
-                    </form>";
-                    }?>
-
-
-
                     <div id="error"></div>
                     <div id="success"></div>
                 </div>
+            </form>
             </div>
         </div>
     </div>
 </div>
 
+</form>
 <?php
 include "../footer.php";
 ?>
 </body>
 </html>
+
+

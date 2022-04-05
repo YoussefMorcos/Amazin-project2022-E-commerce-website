@@ -49,7 +49,7 @@
 <img id="output" width="250" 
      height="200"/><br><br>
 
-<input type="button" id="bt" value="Sell Item"><br><br>	 
+<input type="submit" name="Add" id="bt" value="Sell Item"><br><br>
 </div>	 
 
 

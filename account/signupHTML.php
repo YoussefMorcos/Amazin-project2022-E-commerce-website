@@ -45,8 +45,11 @@
       *Minimum username requirement:
       <p id="usernameLength" class="invalid"> Minimum 5 characters</p>
     </div>
-
-
+<br>
+      <div class="form-group">
+          <label>type</label>
+          <input type="text" name="type" class="form-control" id="username" />  enter(user/seller)
+          <div >
     <br/>
 
     <label>Email address</label>

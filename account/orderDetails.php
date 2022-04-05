@@ -11,12 +11,10 @@
 <body>
 <?php
 include "../navbar.php";
+$id = $_SESSION['id'];
 $db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
-$aisle = isset($_GET['aisle']) ? $_GET['aisle'] : 'general';
-$cleanAisle = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
-if($aisle != "general")
-$query = "SELECT * FROM products,customers where category='$aisle' and customers.id = sellerId";
-else $query = "SELECT * FROM products,customers where sellerID = customers.id ";
+$orderId = $_GET['orderId'];
+$query = "SELECT * FROM products,orders,customers where products.id = orders.productId and orders.oid ='$orderId'and sellerId = customers.id";
 $result = mysqli_query($db, $query);
 
 ?>
@@ -25,7 +23,7 @@ $result = mysqli_query($db, $query);
 ?>
 <div class="container">
     <div class="header">
-        <h1><?php echo $cleanAisle; ?></h1>
+        <h1>Order <?php echo "$orderId"?></h1>
     </div>
     <div class="content">
         <?php
@@ -40,7 +38,7 @@ $result = mysqli_query($db, $query);
 
 
             $imgPath = "../" . $row['imgPath'] . "/";
-            $linkPath = "product-detail.php?code=" . $code;
+            $linkPath = "../products/product-detail.php?code=" . $code;
             $img = "<img class=\"landing-item_img\"  src=\"" . $imgPath . "\"alt=\"" . $asset . "\" />";
 
             $item = "<a class=\"landing-item__link\" href=\"" . $linkPath . "\">

@@ -28,10 +28,11 @@ if(isset($_POST['Add'])) {
         $postalcode = $_POST['postalcode'];
         $city = $_POST['city'];
         $phone = $_POST['phone'];
+        $type = $_POST['type'];
 
 
-        $AddUserQuery="insert into customers(username ,email,password,fname,lname, street, apt, postalcode, city, phone) values
-         ('$username','$email','$password','$fname',' $lname' , '$street' , ' $apt', '$postalcode', '$city' , '$phone')";
+        $AddUserQuery="insert into customers(username ,email,password,fname,lname, street, apt, postalcode, city, phone,type) values
+         ('$username','$email','$password','$fname',' $lname' , '$street' , ' $apt', '$postalcode', '$city' , '$phone','$type')";
         mysqli_query($db,$AddUserQuery);
         $thisUser = "Select username From customers where username='$username'";
         $result2 = mysqli_query($db,$thisUser);

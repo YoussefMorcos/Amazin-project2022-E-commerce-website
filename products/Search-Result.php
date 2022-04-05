@@ -10,7 +10,8 @@
 </head>
 <body>
 <?php
-session_start();
+include "../navbar.php";
+
 $search = isset($_POST['search']) ? $_POST['search'] : '';
 $search = ucfirst($search);
 $db= mysqli_connect("localhost", "root","321trewq", "amazin","3306") or die ("fail");
@@ -18,7 +19,7 @@ $query="SELECT products.id, name, price, username , description,imgPath, sellerI
 OR category LIKE '%$search%') AND products.sellerID = customers.id" ;
 $result=mysqli_query($db,$query);
 
-include "../navbar.php";
+
 ?>
 <h1>Search Results</h1>
 <h6><?php echo mysqli_num_rows($result) ;?> result(s) </h6>
