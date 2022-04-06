@@ -11,10 +11,10 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazin</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Application/css/footer.css" />
-    <link rel="stylesheet" href="../Application/css/menu-bar.css" />
-    <link rel="stylesheet" href="../Application/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="../Application/css/logIn.css">
+    <link rel="stylesheet" href="../../Application/css/footer.css" />
+    <link rel="stylesheet" href="../../Application/css/menu-bar.css" />
+    <link rel="stylesheet" href="../../Application/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../../Application/css/logIn.css">
 
     <!--bootstrap from w3school https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp-->
 
@@ -27,7 +27,7 @@ session_start();
 <body>
   <!-- menu bar-->  
   <?php
-        include "../navbar.php";
+        include "../../navbar.php";
   $db= mysqli_connect("localhost", "root","321trewq", "amazin","3306") or die ("fail");
   $username = $_SESSION['username'];
 
@@ -176,10 +176,10 @@ session_start();
     <!--FOOTER-->
   <?php
   }
-    include "../footer.php";
+    include "../../footer.php";
   ?>
         <!--javascript file-->
-  <script type="text/javascript" src="../Application/js/userprofile.js"></script>
+  <script type="text/javascript" src="../../Application/js/userprofile.js"></script>
 
         </body>
         </html>

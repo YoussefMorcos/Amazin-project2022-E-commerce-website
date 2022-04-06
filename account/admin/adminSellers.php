@@ -2,9 +2,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../Application/css/footer.css" />
-    <link rel="stylesheet" href="../Application/css/menu-bar.css" />
-    <link rel="stylesheet" href="../Application/css/index.css" />
+    <link rel="stylesheet" href="../../Application/css/footer.css" />
+    <link rel="stylesheet" href="../../Application/css/menu-bar.css" />
+    <link rel="stylesheet" href="../../Application/css/index.css" />
 
     <style>
         td{
@@ -15,7 +15,7 @@
 </head>
 <body>
 <?php
-include ("../navbar.php");
+include("../navbar.php");
 $db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
 $query = "select * from customers where type = 'seller'" ;
 $result = mysqli_query($db,$query);

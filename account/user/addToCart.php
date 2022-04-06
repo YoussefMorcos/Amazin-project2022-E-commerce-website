@@ -22,7 +22,7 @@ if(isset($_SESSION["username"]))    // USER LOGGED IN
             $query2 = "insert into carts(customerId ,productId,quantity) values ('$customerId','$productId','$quantity')";
             mysqli_query($db, $query2);
             echo "<script>
-            window.location.href='../account/cart.php';
+            window.location.href='cart.php';
             alert('item added successfully ');
             </script>";
 
@@ -30,20 +30,20 @@ if(isset($_SESSION["username"]))    // USER LOGGED IN
             $query2 = "UPDATE carts SET quantity = quantity + '$quantity' WHERE productId = '$productId' and customerId = '$customerId'; ";
             mysqli_query($db, $query2);
             echo "<script>
-            window.location.href='../account/cart.php';
+            window.location.href='cart.php';
             alert('item added successfully ');
             </script>";
         }
     }else{
         echo "<script>
-            window.location.href='../index.php';
+            window.location.href='../../index.php';
             alert('Sorry we do not have this amount ready in stock');
             </script>";
 }
 
 }else {
     echo "<script>
-            window.location.href='../account/logIn.php';
+            window.location.href='../general/logIn.php';
             alert('please log in or register to have a cart ');
             </script>";
 }

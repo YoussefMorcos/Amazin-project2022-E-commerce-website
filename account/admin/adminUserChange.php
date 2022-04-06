@@ -39,7 +39,7 @@ if(isset($_POST['confirmBtn'])) {
 
         echo "<script>
             alert('This username or email already exists in the system ');
-            window.location.href='../index.php';
+            window.location.href='../../index.php';
             </script>";
 
 

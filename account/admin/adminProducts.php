@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../Application/css/menu-bar.css"/>
-    <link rel="stylesheet" href="../Application/css/footer.css"/>
-    <link rel="stylesheet" href="../Application/css/product-landing.css"/>
+    <link rel="stylesheet" href="../../Application/css/menu-bar.css"/>
+    <link rel="stylesheet" href="../../Application/css/footer.css"/>
+    <link rel="stylesheet" href="../../Application/css/product-landing.css"/>
     <title>STORE</title>
 </head>
 <body>
 <?php
 include "../navbar.php";
-$id = $_SESSION['id'];
 $db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
-$orderId = $_GET['orderId'];
-$query = "SELECT * FROM products,orders,customers where products.id = orders.productId and orders.oid ='$orderId'and sellerId = customers.id";
+$aisle = isset($_GET['aisle']) ? $_GET['aisle'] : 'general';
+$cleanAisle = strtoupper(substr($aisle, 0, 1)) . substr($aisle, 1);
+$query = "SELECT * FROM products,customers where sellerID = customers.id ";
 $result = mysqli_query($db, $query);
 
 ?>
@@ -23,7 +23,7 @@ $result = mysqli_query($db, $query);
 ?>
 <div class="container">
     <div class="header">
-        <h1>Order <?php echo "$orderId"?></h1>
+        <h1>All Products</h1>
     </div>
     <div class="content">
         <?php
@@ -88,3 +88,4 @@ include "../footer.php";
 ?>
 </body>
 </html>
+

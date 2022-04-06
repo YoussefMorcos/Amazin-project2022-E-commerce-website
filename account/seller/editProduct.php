@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-include "../navbar.php";
+include "../../navbar.php";
 
 
 $code = $_SESSION['id'];
@@ -35,9 +35,9 @@ if(isset($_POST["submit"])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../Application/css/menu-bar.css" />
-    <link rel="stylesheet" href="../Application/css/footer.css" />
-    <link rel="stylesheet" href="../Application/css/product-detail.css" />
+    <link rel="stylesheet" href="../../Application/css/menu-bar.css" />
+    <link rel="stylesheet" href="../../Application/css/footer.css" />
+    <link rel="stylesheet" href="../../Application/css/product-detail.css" />
     <title>STORE</title>
     <style>
         img {
@@ -110,7 +110,7 @@ if(isset($_POST["submit"])) {
 
 </form>
 <?php
-include "../footer.php";
+include "../../footer.php";
 ?>
 </body>
 </html>

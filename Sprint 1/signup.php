@@ -39,7 +39,7 @@ if (!isset($_POST["signUpBtn"]))
   <!--direct to log in page-->
   <div class="container-sm message padding-block" style="text-align: right;">
     <p>Already have an account?
-    <a href="../account/logIn.php" target="_self">Sign in</a></p>
+    <a href="../account/general/logIn.php" target="_self">Sign in</a></p>
   </div>
 
   <!--form for user-->

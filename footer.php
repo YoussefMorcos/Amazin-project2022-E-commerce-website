@@ -13,8 +13,17 @@
     <ul>
         <li class="footer-head-list-item">Account</li>
         <br />
-        <li><a href="account/logIn.php">Login</a></li>
-        <li><a href="account/signupHTML.php">Create Account</a></li>
+        <li><a href="account/general/logIn.php">Login</a></li>
+
+
+        <?php if(!isset($_SESSION['username'])){
+            if(str_contains($_SERVER['REQUEST_URI'],"index")) {
+                echo " <li class='menu-item'><a href='account/general/signupHTML.php'>Create Account</a></li>";
+            }else if(str_contains($_SERVER['REQUEST_URI'],"account")){
+                echo " <li class='menu-item'><a href='signupHTML.php'>Create Account</a></li>";
+            }else{ echo " <li class='menu-item'><a href='../../account/general/signupHTML.php'>Create Account</a></li>";
+            }
+        }?>
 
     </ul>
     <ul>

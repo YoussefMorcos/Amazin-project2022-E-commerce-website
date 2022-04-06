@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../Application/css/menu-bar.css"/>
-    <link rel="stylesheet" href="../Application/css/footer.css"/>
-    <link rel="stylesheet" href="../Application/css/product-landing.css"/>
+    <link rel="stylesheet" href="../../Application/css/menu-bar.css"/>
+    <link rel="stylesheet" href="../../Application/css/footer.css"/>
+    <link rel="stylesheet" href="../../Application/css/product-landing.css"/>
     <title>STORE</title>
 </head>
 <body>
 
 <?php
-include ('../navbar.php');
+include('../../navbar.php');
 
 
 $id = $_SESSION['id'];

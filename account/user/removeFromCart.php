@@ -12,7 +12,7 @@ $realQuantity = $row['quantity'];
 
 if($quantity > $realQuantity ){
     echo '<script>
-            window.location.href="../account/cart.php";
+            window.location.href="cart.php";
             alert("You dont have the amount you entered in your cart");
             </script>';
 
@@ -23,7 +23,7 @@ if($quantity > $realQuantity ){
                 WHERE productId='$productId' and customerId = (select id from customers where username = '$username' )";
     mysqli_query($db,$query);
     echo "<script>
-            window.location.href='../account/cart.php';
+            window.location.href='cart.php';
             alert('updated successfully');
             </script>";
 }else{
@@ -31,7 +31,7 @@ if($quantity > $realQuantity ){
                 WHERE productId='$productId' and customerId = (select id from customers where username = '$username' )";
     mysqli_query($db,$query);
     echo "<script>
-            window.location.href='../account/cart.php';
+            window.location.href='cart.php';
             alert('item removed successfully');
             </script>";
 }

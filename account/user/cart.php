@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../Application/css/menu-bar.css"/>
-    <link rel="stylesheet" href="../Application/css/footer.css"/>
-    <link rel="stylesheet" href="../Application/css/product-landing.css"/>
+    <link rel="stylesheet" href="../../Application/css/menu-bar.css"/>
+    <link rel="stylesheet" href="../../Application/css/footer.css"/>
+    <link rel="stylesheet" href="../../Application/css/product-landing.css"/>
     <title>STORE</title>
 </head>
 <body>
@@ -29,7 +29,7 @@ $query3 = "select quantity from carts carts.customerId = '$userId' and carts.pro
 $result3 = mysqli_query($db,$query3);
 ?>
 <?php
-include "../navbar.php";
+include "../../navbar.php";
 ?>
 <div class="container">
     <div class="header">
@@ -51,7 +51,7 @@ include "../navbar.php";
             $asset = strtolower(str_replace(" ", "_", $name));
 
 
-            $imgPath = "../" . $row['imgPath'] . "/";
+            $imgPath = "../../" . $row['imgPath'] . "/";
             $linkPath = "../products/product-detail.php?code=" . $code;
             $img = "<img class=\"landing-item_img\"  src=\"" . $imgPath . "\"alt=\"" . $asset . "\" />";
 
@@ -90,7 +90,7 @@ include "../navbar.php";
                                </div>
                           
                             </a>
-                            <form style='position: relative;left: 1000px' action='../products/removeFromCart.php' method='post'>
+                            <form style='position: relative;left: 1000px' action='removeFromCart.php' method='post'>
                         <label for='quantity'>Quantity</label>
                         <input id='quantity' name='quantity' type='text' value='1' />
                          <input name='code' type='hidden' value=  $code  />
@@ -114,7 +114,7 @@ include "../navbar.php";
 </div>
 
 <?php
-include "../footer.php";
+
 ?>
 </body>
 </html>

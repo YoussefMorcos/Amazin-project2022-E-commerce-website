@@ -11,10 +11,10 @@ if(!isset($_POST["login"]))        //  BTN NOT CLICKED
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazin</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Application/css/footer.css" />
-    <link rel="stylesheet" href="../Application/css/menu-bar.css" />
-    <link rel="stylesheet" href="../Application/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="../Application/css/signup.css">
+    <link rel="stylesheet" href="../../Application/css/footer.css" />
+    <link rel="stylesheet" href="../../Application/css/menu-bar.css" />
+    <link rel="stylesheet" href="../../Application/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../../Application/css/signup.css">
 
     <!--bootstrap from w3school https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp-->
 
@@ -60,7 +60,7 @@ if(!isset($_POST["login"]))        //  BTN NOT CLICKED
   ?>
 
 <!--javascript at the bottom for it to load after receiving all the needed information-->
-<script type="text/javascript" src="../Application/js/logIn.js"></script>
+<script type="text/javascript" src="../../Application/js/logIn.js"></script>
 
 </body>
 </html>

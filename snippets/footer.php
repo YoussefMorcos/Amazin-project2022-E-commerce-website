@@ -13,7 +13,7 @@
     <ul>
         <li class="footer-head-list-item">Account</li>
         <br />
-        <li><a href="../account/logIn.php">Login</a></li>
+        <li><a href="../account/general/logIn.php">Login</a></li>
         <li><a href="../Sprint%201/signup.php">Create Account</a></li>
 
     </ul>

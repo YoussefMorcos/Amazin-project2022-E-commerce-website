@@ -50,7 +50,7 @@ if(isset($_POST['Save'])) {
     mysqli_query($db,$EditProductQuery);
 
     echo "<script>
-          window.location.href='../index.php';
+          window.location.href='../../index.php';
           alert('This product information has been updated successfully into the system');
           </script>";
 }

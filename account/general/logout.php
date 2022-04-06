@@ -16,10 +16,11 @@ if(!isset($_POST["logIn"]))        // if button log in is not clicked
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amazin</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Application/css/footer.css" />
-    <link rel="stylesheet" href="../Application/css/menu-bar.css" />
-    <link rel="stylesheet" href="../Application/css/index.css" />
-    <link rel="stylesheet" type="text/css" href="../Application/css/signup.css">
+    <link rel="stylesheet" href="../../Application/css/footer.css" />
+    <link rel="stylesheet" href="../../Application/css/menu-bar.css" />
+        <link rel="stylesheet" type="text/css" href="../../Application/css/signup.css">
+    <link rel="stylesheet" href="../../Application/css/index.css" />
+
 
     <!--bootstrap from w3school https://www.w3schools.com/bootstrap4/bootstrap_ref_all_classes.asp-->
 
@@ -32,7 +33,7 @@ if(!isset($_POST["logIn"]))        // if button log in is not clicked
 <body>
   <!-- menu bar-->  
   <?php
-        include "../navbar.php";
+        include "../../navbar.php";
   ?>
 
 <div class="main-content">
@@ -63,7 +64,7 @@ if(!isset($_POST["logIn"]))        // if button log in is not clicked
 
   <!--FOOTER-->
   <?php
-    include "../footer.php";
+    include "../../footer.php";
   ?>
 
 </body>

@@ -13,7 +13,7 @@ if(isset($_POST['Edit'])){
 
     if ($result->num_rows==0){
         echo "<script>
-            window.location.href='../index.php';
+            window.location.href='../../index.php';
             alert('This user does not exist in the system ');
             </script>";
     }else{
@@ -30,7 +30,7 @@ if(isset($_POST['Delete'])){
 
     if ($result->num_rows==0){
         echo "<script>
-            window.location.href='../index.php';
+            window.location.href='../../index.php';
             alert('This user does not exist in the system ');
             </script>";
     }else{
@@ -39,7 +39,7 @@ if(isset($_POST['Delete'])){
 
         echo "<script>
             alert('user deleted successfully');
-            window.location.href='../index.php';
+            window.location.href='../../index.php';
             </script>";
 
     }

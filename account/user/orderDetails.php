@@ -3,34 +3,32 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../Application/css/menu-bar.css"/>
-    <link rel="stylesheet" href="../Application/css/footer.css"/>
-    <link rel="stylesheet" href="../Application/css/product-landing.css"/>
+    <link rel="stylesheet" href="../../Application/css/menu-bar.css"/>
+    <link rel="stylesheet" href="../../Application/css/footer.css"/>
+    <link rel="stylesheet" href="../../Application/css/product-landing.css"/>
     <title>STORE</title>
 </head>
 <body>
 <?php
-session_start();
 include "../navbar.php";
+$id = $_SESSION['id'];
+$db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
+$orderId = $_GET['orderId'];
+$query = "SELECT * FROM products,orders,customers where products.id = orders.productId and orders.oid ='$orderId'and sellerId = customers.id";
+$result = mysqli_query($db, $query);
+
 ?>
 <?php
 
-$username = $_SESSION['username'];
-$db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
-$query = "SELECT * FROM products where sellerID = (select id from customers where username ='$username')";
-
-
 ?>
-
 <div class="container">
     <div class="header">
-        <h1><?php echo "Your Products"; ?></h1>
+        <h1>Order <?php echo "$orderId"?></h1>
     </div>
     <div class="content">
         <?php
-        $result = mysqli_query($db, $query);
-        while ($row = mysqli_fetch_assoc($result)) {
 
+        while ($row = mysqli_fetch_assoc($result)) {
             $code = $row['id'];
             $name = $row['name'];
             $price = $row['price'];
@@ -40,7 +38,7 @@ $query = "SELECT * FROM products where sellerID = (select id from customers wher
 
 
             $imgPath = "../" . $row['imgPath'] . "/";
-            $linkPath = "product-detail.php?code=" . $code;
+            $linkPath = "../products/product-detail.php?code=" . $code;
             $img = "<img class=\"landing-item_img\"  src=\"" . $imgPath . "\"alt=\"" . $asset . "\" />";
 
             $item = "<a class=\"landing-item__link\" href=\"" . $linkPath . "\">
@@ -62,6 +60,8 @@ $query = "SELECT * FROM products where sellerID = (select id from customers wher
                                                </p>
                                                    <div class=\"landing-item_content--header-price\">
                 <p style='float: right' class=\"item--price\">
+                   seller: " . $row['username'] . "<br>
+                   seller ID: " . $row['sellerID'] . "<br>
                    product id: ".$code."<br>
                    <B>only ".$row['quantity']." left in stock!</B>
                 </p>
@@ -88,4 +88,3 @@ include "../footer.php";
 ?>
 </body>
 </html>
-
