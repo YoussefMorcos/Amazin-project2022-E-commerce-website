@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>postitem</title>
+	<link rel="stylesheet" href="prodlist.css">
+	<meta charset="UTF-8">
+</head>
+<body>
+
+
+<div class="header">
+  <h1>Product list</h1>
+</div>
+
+
+
+
+<form action="/action_page.php">
+
+
+<select id="select-category" onChange="selectCategory(this)">
+    <option category="all">All</option>
+    <option category="clothes">Clothes</option>
+    <option category="electronics">Electronics</option>
+    <option category="jewelry">Jewelry</option>
+	<option category="tools">Tools</option>
+	
+</select>
+
+</form>
+<script>
+function selectCategory(element) {
+  const value = element.value;
+  const products = document.getElementsByClassName('product');
+  Array.prototype.forEach.call(products, product => {
+    const productAttr = product.getAttribute('category');
+    if(value === 'All'){
+      product.style.display = 'block';
+      return;
+    }
+    productAttr !== value.toLowerCase() ? 
+        product.style.display = 'none' :
+        product.style.display = 'block';
+  })
+}
+</script>
+
+<div category="clothes" class="product">Clothes<br><p>Enter Clothes Here </div>
+<div category="electronics" class="product">Electronics<br><p>Enter Electronics Here</div>
+<div category="jewelry" class="product">Jewelry<br><p>Enter Jewelry Here</div>
+<div category="tools" class="product">Tools<br><p>Enter Tools Here</div>
+
+
+<div class="footer">
+<p>Amazin</p>
+</div>
+
+
+
+
+
+</body>
+</html>
