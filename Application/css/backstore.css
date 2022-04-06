@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+}
+table {
+  margin: 0 auto;
+}
+table td,
+th {
+  padding-right: 60px;
+  padding-bottom: 10px;
+}
+
+button {
+  margin-right: 8px;
+}
+
+.container {
+  padding: 20px 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#success {
+  text-align: center;
+  padding: 4px;
+  color: green;
+}
+
+#error {
+  padding: 4px;
+  color: red;
+}
+
+.back {
+  margin-right: 10px;
+}

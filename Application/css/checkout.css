@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Redressed&family=Zilla+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+html,
+body {
+    height: 120%
+}
+
+
+body,
+form {
+    font-family: Zilla Slab;
+}
+
+.title {
+    text-align: center;
+    color: black;
+    font-family: Kaushan Script;
+    font-size: 30pt;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+.content {
+    text-align: center;
+    color: black;
+    font-family: Zilla Slab;
+    font-size: 14pt;
+    padding: 2%;
+}
+
+.main-content {
+    height: 90%;
+}
+
+.continue-btn {
+    text-align: center;
+    font-family: Libre Baskerville;
+    font-style: italic;
+    font-size: 20pt;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+.btn-style {
+    color: white;
+    background-color: #2d5c83;
+    font-size: 15pt;
+    font-family: Libre Baskerville;
+    text-align: center;
+    padding: 14px 40px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.btn-style:hover {
+    background-color: #96bde9;
+    color: white;
+}
+
+.address {
+    text-align: left;
+    color: black;
+    font-family: Zilla Slab;
+    font-size: 15pt;
+    justify-content: center;
+    padding-top: 5%;
+    padding-left: 15%;
+}
+
+
+.payment {
+    text-align: left;
+    color: black;
+    font-family: Zilla Slab;
+    font-size: 15pt;
+    justify-content: center;
+    padding-top: 5%;
+    padding-left: 15%;
+}
+
+input[type=text] {
+    width: 70%;
+    padding: 10px 15px;
+    margin: 8px 0;
+}
+
+.cancelbtn {
+    color: black;
+    background-color: white;
+    font-size: 15pt;
+    font-family: Libre Baskerville;
+    text-align: center;
+    padding: 14px 40px;
+    border-radius: 8px;
+    border: 2px solid red;
+    transition-duration: 0.4s;
+}
+
+.cancelbtn:hover {
+    background-color: red;
+    color: white;
+}
