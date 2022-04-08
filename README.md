@@ -4,8 +4,7 @@
 
    ## Description of the project:
 
-Amazin is an online store that gathers items from various online stores and allows the customers to shop them all in one convenient e-commerce. This gives the customer the same experience they would get from a mall without having to leave the comfort of their home. It also prevents customers to have to go to crowded stores during these uncertain times. 
-
+Amazin is an online store that gathers items from various online stores and allows the customers to shop them all in one convenient e-commerce website. This gives the customer the same experience that they would get from a mall without having to leave the comfort of their home. With the uncertainty of many bussiness availabilty to receive clients in person due to the COVID-19 pandemic, users can shop safely using the online website we created.
 ## Team members and roles:
 
 - Luca Dallaire (40132255) lucadallaire: front-end
@@ -18,16 +17,20 @@ Amazin is an online store that gathers items from various online stores and allo
 
 ## Project approach and technology:
 
-The front-end development of the e-commerce application created using HTML/CSS and Javascript. 
+The front-end development of the e-commerce application will be created using HTML/CSS and Javascript. 
 
-Java will be used in the back-end development of the application. Our team is comprised of software engineers who will focus more on the front-end development, and computer engineers who will focus more on the back-end development of the e-commerce appliacation. 
+PHP will be used in the back-end development of the application. SQL will be used in conjunction with PHP as a database to hold the web app's necesary data such as usernames, email addresses and even the products and their prices.
+
+Our team is comprised of software engineers who will focus more on the front-end development, and computer engineers who will focus more on the back-end development of the e-commerce appliacation. 
 
    ##  Core features:
 
 The application will include the following features:
 
-- Create a login/home page page, sellers page.
- - Create a database of all the products that sellers put on the market. 
-- Build a Cart for the customers.
+- Create a login/home page page for three types of users: admin, user, seller.
+- Create a products page where sellers can list their products for sale.
+- Create a database to store the products that sellers put on the market and the user information.
+- Build a Cart for so customers can purchase multiple items at once.
+- Create a checkout page so customers can succesfully complete the purchase of thier items.
 - Create a secure transaction system and store customers information safely. 
     
