@@ -52,7 +52,7 @@ include "../../navbar.php";
 
 
             $imgPath = "../../" . $row['imgPath'] . "/";
-            $linkPath = "../products/product-detail.php?code=" . $code;
+            $linkPath = "../../products/product-detail.php?code=" . $code;
             $img = "<img class=\"landing-item_img\"  src=\"" . $imgPath . "\"alt=\"" . $asset . "\" />";
 
 
