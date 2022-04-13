@@ -52,8 +52,10 @@ if(isset($_SESSION["username"]))    // USER LOGGED IN
                     $db= mysqli_connect("localhost", "root","321trewq", "amazin","3306") or die ("fail");
                     $username = $_SESSION['username'];
                     $query="SELECT * FROM customers where username='$username'";
+
                     $result=mysqli_query($db,$query);
                     $row = $result->fetch_assoc();
+                    $_SESSION['id'] = $row['ID'];
                     echo"
                    
                         <b>USERNAME</b> :".$row["username"]."<br/>

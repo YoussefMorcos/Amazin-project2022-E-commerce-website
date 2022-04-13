@@ -192,7 +192,7 @@ if(!isset($_SESSION['username'])){
                             if(isset($_SESSION["username"])) {
                                 if(str_contains($_SERVER['REQUEST_URI'],"/account/"  and str_contains($_SERVER['REQUEST_URI'],"/general/"))){
                                     echo "<li  class='menu-item'><a href='account/general/myAccount.php'>Hello " . $_SESSION["username"] . "</a></li>";
-                                    echo " <li class='menu-item'><a href='logout.php'> log out</a></li>";
+                                    echo " <li class='menu-item'><a href='../../account/general/logout.php'> log out</a></li>";
                                 }else{
                                     echo "<li  class='menu-item'><a href='../../../account/general/myAccount.php'> Hello " . $_SESSION["username"] . "</a></li>";
                                     echo "<li class='menu-item'><a href='../../../account/general/logout.php'> log out</a></li>";
@@ -234,7 +234,7 @@ if(!isset($_SESSION['username'])){
             <div class="nav-wrapper">
                 <nav>
                     <div class="logo-wrapper">
-                        <p id='logo'> <a href='../index.php'>AMAZIN</a></p>
+                        <p id='logo'> <a href='../../../../index.php'>AMAZIN</a></p>
 
 
                     </div>
@@ -242,8 +242,8 @@ if(!isset($_SESSION['username'])){
                         <ul class="menu">
                             <?php if(str_contains($_SERVER['REQUEST_URI'],"/products/")){
 
-                                echo' <li class="menu-item"><a href="../products/sellerMyProducts.php"> My Products</a>';
-                            }else echo ' <li class="menu-item"><a href="account/seller/sellerMyProducts.php"> My Products</a>'
+                                echo' <li class="menu-item"><a href="../../../account/seller/sellerMyProducts.php"> My Products</a>';
+                            }else echo ' <li class="menu-item"><a href="../../../account/seller/sellerMyProducts.php"> My Products</a>'
 
                             ?>
 
@@ -251,11 +251,11 @@ if(!isset($_SESSION['username'])){
                             </li>
                             <?php
                             if(!str_contains($_SERVER['REQUEST_URI'],"/account/")){
-                                echo "<li class='menu-item'><a href='account/general/myAccount.php'>Account</a></li>";
-                            }else{ echo "<li class='menu-item'><a href='myAccount.php'>Account</a></li>";}?>
+                                echo "<li class='menu-item'><a href='../../../account/general/myAccount.php'>Account</a></li>";
+                            }else{ echo "<li class='menu-item'><a href='../../../account/general/myAccount.php'>Account</a></li>";}?>
 
 
-                            <li class="menu-item"><a href="account/seller/postItem.php">Post an item</a></li>
+                            <li class="menu-item"><a href="../../../account/seller/postItem.php">Post an item</a></li>
                             <?php
                             if(isset($_SESSION["admin"])) {
                                 echo "<li class='menu-item'><a href=''>Admin</a>";
@@ -269,19 +269,19 @@ if(!isset($_SESSION['username'])){
                             }
                             if(isset($_SESSION["username"])) {
                                 if(!str_contains($_SERVER['REQUEST_URI'],"/account/")){
-                                    echo "<li  class='menu-item'><a href='account/general/myAccount.php'>Hello " . $_SESSION["username"] . "</a></li>";
-                                    echo " <li class='menu-item'><a href='account/general/logout.php'> log out</a></li>";
+                                    echo "<li  class='menu-item'><a href='../../account/general/myAccount.php'>Hello " . $_SESSION["username"] . "</a></li>";
+                                    echo " <li class='menu-item'><a href='../../account/general/logout.php'> log out</a></li>";
                                 }else{
-                                    echo "<li   class='menu-item'><a href='myAccount.php'> Hello " . $_SESSION["username"] . "</a></li>";
-                                    echo " <li class='menu-item'><a href='account/general/logout.php'> log out</a></li>";
+                                    echo "<li   class='menu-item'><a href='../../account/general/myAccount.php'> Hello " . $_SESSION["username"] . "</a></li>";
+                                    echo " <li class='menu-item'><a href='../../account/general/logout.php'> log out</a></li>";
 
                                 }
 
 
                             }else if (str_contains($_SERVER['REQUEST_URI'],"/account/")) {
-                                echo "<li class='menu-item'><a href='../account/logIn.php'  > Login </a></li>";
+                                echo "<li class='menu-item'><a href='../../../account/general/logIn.php'  > Login </a></li>";
 
-                            }else  echo "<li class='menu-item'><a href='../account/logIn.php'  > Login </a></li>";
+                            }else  echo "<li class='menu-item'><a href='../../../account/general/logIn.php'  > Login </a></li>";
                             ?>
                         </ul>
                     </div>
@@ -295,30 +295,30 @@ if(!isset($_SESSION['username'])){
             <div class="nav-wrapper">
                 <nav>
                     <div class="logo-wrapper">
-                        <p id='logo'> <a href='../index.php'>AMAZIN</a></p>
+                        <p id='logo'> <a href='../../../index.php'>AMAZIN</a></p>
                     </div>
                     <div class="menu-wrapper">
                         <ul class="menu">
                             <?php
                             if(!str_contains($_SERVER['REQUEST_URI'],"/account/")){
-                                echo "<li class='menu-item'><a href='account/general/myAccount.php'>Account</a></li>";
-                            }else{ echo "<li class='menu-item'><a href='myAccount.php'>Account</a></li>";}?>
+                                echo "<li class='menu-item'><a href='../../account/general/myAccount.php'>Account</a></li>";
+                            }else{ echo "<li class='menu-item'><a href='../../account/general/myAccount.php'>Account</a></li>";}?>
                             <?php if(str_contains($_SERVER['REQUEST_URI'],"/products/")){
 
-                                echo' <li class="menu-item"><a href="adminUsers.php"> Users</a>';
-                            }else echo ' <li class="menu-item"><a href="account/admin/adminUsers.php"> Users</a>'
+                                echo' <li class="menu-item"><a href="../../account/admin/adminUsers.php"> Users</a>';
+                            }else echo ' <li class="menu-item"><a href="../../account/admin/adminUsers.php"> Users</a>'
 
                             ?>
 
 
                             <?php if(isset($_SESSION['username'])){
-                                echo " <li class='menu-item'><a href='account/admin/adminSellers.php'>Sellers</a></li>";
+                                echo " <li class='menu-item'><a href='../../account/admin/adminSellers.php'>Sellers</a></li>";
                             }
 
 
                             ?>
 
-                            <li class="menu-item"><a href="account/admin/adminProducts.php">Products</a></li>
+                            <li class="menu-item"><a href="../../account/admin/adminProducts.php">Products</a></li>
                             <?php
                             if(isset($_SESSION["admin"])) {
                                 echo "<li class='menu-item'><a href=''>Admin</a>";
@@ -332,19 +332,19 @@ if(!isset($_SESSION['username'])){
                             }
                             if(isset($_SESSION["username"])) {
                                 if(!str_contains($_SERVER['REQUEST_URI'],"/account/")){
-                                    echo "<li  class='menu-item'><a href='account/general/myAccount.php'>Hello " . $_SESSION["username"] . "</a></li>";
-                                    echo " <li class='menu-item'><a href='account/general/logout.php'> log out</a></li>";
+                                    echo "<li  class='menu-item'><a href='../../account/general/myAccount.php'>Hello " . $_SESSION["username"] . "</a></li>";
+                                    echo " <li class='menu-item'><a href='../../account/general/logout.php'> log out</a></li>";
                                 }else{
-                                    echo "<li   class='menu-item'><a href='myAccount.php'> Hello " . $_SESSION["username"] . "</a></li>";
-                                    echo " <li class='menu-item'><a href='account/general/logout.php'> log out</a></li>";
+                                    echo "<li   class='menu-item'><a href='../../account/general/myAccount.php'> Hello " . $_SESSION["username"] . "</a></li>";
+                                    echo " <li class='menu-item'><a href='../../account/general/logout.php'> log out</a></li>";
 
                                 }
 
 
                             }else if (str_contains($_SERVER['REQUEST_URI'],"/account/")) {
-                                echo "<li class='menu-item'><a href='../account/logIn.php'  > Login </a></li>";
+                                echo "<li class='menu-item'><a href='../../account/general/logIn.php'  > Login </a></li>";
 
-                            }else  echo "<li class='menu-item'><a href='../account/logIn.php'  > Login </a></li>";
+                            }else  echo "<li class='menu-item'><a href='../account/general/logIn.php'  > Login </a></li>";
                             ?>
                             </li>
                         </ul>

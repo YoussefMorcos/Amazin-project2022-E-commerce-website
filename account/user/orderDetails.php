@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php
-include "../navbar.php";
+include "../../navbar.php";
 $id = $_SESSION['id'];
 $db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
 $orderId = $_GET['orderId'];
@@ -37,8 +37,8 @@ $result = mysqli_query($db, $query);
             $asset = strtolower(str_replace(" ", "_", $name));
 
 
-            $imgPath = "../" . $row['imgPath'] . "/";
-            $linkPath = "../products/product-detail.php?code=" . $code;
+            $imgPath = "../../" . $row['imgPath'] . "/";
+            $linkPath = "../../products/product-detail.php?code=" . $code;
             $img = "<img class=\"landing-item_img\"  src=\"" . $imgPath . "\"alt=\"" . $asset . "\" />";
 
             $item = "<a class=\"landing-item__link\" href=\"" . $linkPath . "\">
@@ -84,7 +84,7 @@ $result = mysqli_query($db, $query);
 </div>
 
 <?php
-include "../footer.php";
+include "../../footer.php";
 ?>
 </body>
 </html>

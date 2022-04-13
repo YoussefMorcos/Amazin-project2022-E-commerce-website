@@ -15,7 +15,7 @@
 </head>
 <body>
 <?php
-include ("../navbar.php");
+include ("../../navbar.php");
 $db = mysqli_connect("localhost", "root", "321trewq", "amazin", "3306") or die ("fail");
 $query = "select * from customers where type = 'user'" ;
 $result = mysqli_query($db,$query);
